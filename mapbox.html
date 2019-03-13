@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Social Map</title>
+    <style>
+        #map{
+            position:absolute; top:0; bottom:0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
-    <div id='map' style='width: 100%; height: 100%;'></div>
+    <div id='map'>
+
+
+    </div>
+
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoicmF5bW9uZGx4IiwiYSI6ImNqc3RpZ3R6NjI0NDIzeXBkNDlucW81MXEifQ.VThJpKXtsJZEQhScbEiItw';
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
+            style: 'mapbox://styles/mapbox/dark-v9',
+            center: [-68.13734351262877, 45.137451890638886],
+            zoom:6
         });
     </script>
 
