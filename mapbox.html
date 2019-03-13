@@ -13,6 +13,7 @@
 </head>
 <body>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
     <div id='map'>
@@ -25,9 +26,66 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v9',
-            center: [-68.13734351262877, 45.137451890638886],
-            zoom:6
+            center: [-99.9, 41.5],
+            zoom:3.5
         });
+
+        let url = 'https://api.myjson.com/bins/7uj1a';
+
+        async function fetchAsync () {
+            // await response of fetch call
+            let response = await fetch(url);
+            // only proceed once promise is resolved
+            let data = await response.json();
+            // only proceed once second promise is resolved
+            return data;
+        }
+
+        local = fetchAsync();
+        local.then(function (data) {
+            console.log(data);
+            let data_cur = data['2012'];
+            let data_norm = [];
+            var max = 0;
+            for (let key in data_cur){
+                if (parseInt(data_cur[key]['permit']) > max)
+                    max = parseInt(data_cur[key]['permit']);
+                data_norm.push({"STATE_ID":data_cur[key]['id'],"PERMIT_NUM":parseInt(data_cur[key]['permit'])});
+            }
+
+            console.log(data_norm);
+
+            map.on('load', function() {
+
+
+                map.addSource("states", {
+                    type: "vector",
+                    url: "mapbox://mapbox.us_census_states_2015"
+                });
+
+                var expression = ["match", ["get", "STATE_ID"]];
+
+                data_norm.forEach(function(row) {
+                    var green = (row["PERMIT_NUM"] / (max/10)) * 255;
+                    var color = "rgba(" + 0 + ", " + green + ", " + 0 + ", 1)";
+                    expression.push(row["STATE_ID"], color);
+                });
+
+                expression.push("rgba(0,0,0,0)");
+
+                map.addLayer({
+                    "id": "states-join",
+                    "type": "fill",
+                    "source": "states",
+                    "source-layer": "states",
+                    "paint": {
+                        "fill-color": expression
+                    }
+                }, 'waterway-label');
+            });
+
+        });
+
     </script>
 
 </body>
