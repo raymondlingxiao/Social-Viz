@@ -1,7 +1,7 @@
 # cs467-crime-map
-CS467 Course Project
+## CS467 Course Project
 
-Progress:
+## Progress:
 
 1. Cleaned the data, mapped each state with desired id.
 2. Sum the permits number with respect to each state, `per year`.
