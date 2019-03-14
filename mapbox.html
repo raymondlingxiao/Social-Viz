@@ -5,9 +5,12 @@
     <title>Social Map</title>
     <style>
         #map{
-            position:absolute; top:0; bottom:0;
+
+            position:absolute;
+            top:0; bottom:0;
             width: 100%;
             height: 100%;
+            z-index: -100;
         }
     </style>
 </head>
@@ -17,7 +20,6 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
     <div id='map'>
-
 
     </div>
 
@@ -29,6 +31,9 @@
             center: [-99.9, 41.5],
             zoom:3.5
         });
+        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.FullscreenControl());
+
 
         let url = 'https://api.myjson.com/bins/7uj1a';
 
@@ -41,15 +46,37 @@
             return data;
         }
 
+        // set legend range
+        // 1w 5w 10w 15w 20w 25w 30w 35w 40w
+        // function getColor(number){
+        //     return number > 400000 ? '#071125' :
+        //         number > 350000  ? '#0C2144' :
+        //             number > 300000  ? '#0B1F65' :
+        //                 number > 250000  ? '#16488F' :
+        //                     number > 200000   ? '#60A3D9' :
+        //                         number > 150000   ? '#3DBEFF' :
+        //                             number > 100000   ? '#BFD7ED' :
+        //                                 number > 50000 ? '':
+        //                                     '#071125';
+        // }
+
+
+
+        // save promise to local file for later use
+        // use within scope
         local = fetchAsync();
         local.then(function (data) {
             console.log(data);
             let data_cur = data['2012'];
             let data_norm = [];
             var max = 0;
+            var min = Number.MAX_VALUE;
             for (let key in data_cur){
                 if (parseInt(data_cur[key]['permit']) > max)
                     max = parseInt(data_cur[key]['permit']);
+                if (parseInt(data_cur[key]['permit']) < min)
+                    min = parseInt(data_cur[key]['permit']);
+
                 data_norm.push({"STATE_ID":data_cur[key]['id'],"PERMIT_NUM":parseInt(data_cur[key]['permit'])});
             }
 
@@ -65,24 +92,70 @@
 
                 var expression = ["match", ["get", "STATE_ID"]];
 
+
                 data_norm.forEach(function(row) {
                     var green = (row["PERMIT_NUM"] / (max/10)) * 255;
-                    var color = "rgba(" + 0 + ", " + green + ", " + 0 + ", 1)";
+                    var color = "rgba(" + green + ", " + 0 + ", " + 0 + ", 1)";
+
                     expression.push(row["STATE_ID"], color);
                 });
+                console.log(max,min);
 
                 expression.push("rgba(0,0,0,0)");
 
                 map.addLayer({
-                    "id": "states-join",
+                    "id": "stateLayer",
                     "type": "fill",
                     "source": "states",
                     "source-layer": "states",
                     "paint": {
-                        "fill-color": expression
+                        "fill-color": expression,
+                        'fill-outline-color': 'grey',
+                        'fill-opacity': 0.9
                     }
                 }, 'waterway-label');
             });
+
+
+
+            var popup = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: false
+            });
+
+            function showDetail(location, layer, fields) {
+                var features = map.queryRenderedFeatures(location.point, layer);
+
+                popup.remove();
+                // exclude no-need land
+                if (features !== '' && features[0]["layer"]["id"] === 'stateLayer') {
+                    // console.log(features)
+                    var popupText = "";
+
+                    popupText += "<strong>" + fields[0] + ":</strong> " + features[0].properties["STATE_NAME"] + "<" + "br" + ">";
+                    let id = features[0].properties["STATE_ID"];
+                    for (let i=0;i<data_norm.length;i++){
+                        if (data_norm[i]["STATE_ID"] === id ){
+                            popupText += "<strong>" + fields[1] + ":</strong> " + data_norm[i]["PERMIT_NUM"] + "<" + "br" + ">";
+                            break;
+                        }
+                    }
+
+                    popup.setLngLat(location.lngLat)
+                        .setHTML(popupText)
+                        .addTo(map);
+                }
+            }
+
+            map.on('mousemove', function(e) {
+                showDetail(e, 'stateLayer', ["STATE_NAME", "PERMITS_NUM"])
+            });
+
+            map.on('click', function(e) {
+                showDetail(e, 'stateLayer', ["STATE_NAME", "PERMITS_NUM"])
+            });
+
+
 
         });
 
