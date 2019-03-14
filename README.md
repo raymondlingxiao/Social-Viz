@@ -10,5 +10,6 @@
 5. Imported `MapBox` module, finished basic `Choropleth Map`.
 6. Add hover function to show `detail` view of each state.
 7. Add `Legend`, theme:red
+8. 3D function finished, but unable to focus on `highest column` ---waited to be fixed
 
 -Ray
