@@ -12,6 +12,30 @@
             height: 100%;
             z-index: -100;
         }
+
+        .legend {
+            background-color: #fff;
+            border-radius: 3px;
+            bottom: 30px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            padding: 10px;
+            position: absolute;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px;
+        }
+
+        .legend div span {
+            border-radius: 50%;
+            display: inline-block;
+            height: 10px;
+            margin-right: 5px;
+            width: 10px;
+        }
     </style>
 </head>
 <body>
@@ -21,6 +45,19 @@
 
     <div id='map'>
 
+    </div>
+
+    <div id='state-legend' class='legend'>
+        <h4>Permits Amount</h4>
+        <div><span style='background-color: rgb(18,5,5)'></span><10,000</div>
+        <div><span style='background-color: rgb(35,5,6)'></span>10,000</div>
+        <div><span style='background-color: rgb(64,5,7)'></span>25,000</div>
+        <div><span style='background-color: rgb(84,5,8)'></span>50,000</div>
+        <div><span style='background-color: rgb(109,6,11)'></span>80,000</div>
+        <div><span style='background-color: rgb(120,6,14)'></span>100,000</div>
+        <div><span style='background-color: rgb(148,6,15)'></span>200,000</div>
+        <div><span style='background-color: rgb(200,7,19)'></span>500,000</div>
+        <div><span style='background-color: rgb(245,9,28)'></span>100,000,000</div>
     </div>
 
     <script>
@@ -47,18 +84,18 @@
         }
 
         // set legend range
-        // 1w 5w 10w 15w 20w 25w 30w 35w 40w
-        // function getColor(number){
-        //     return number > 400000 ? '#071125' :
-        //         number > 350000  ? '#0C2144' :
-        //             number > 300000  ? '#0B1F65' :
-        //                 number > 250000  ? '#16488F' :
-        //                     number > 200000   ? '#60A3D9' :
-        //                         number > 150000   ? '#3DBEFF' :
-        //                             number > 100000   ? '#BFD7ED' :
-        //                                 number > 50000 ? '':
-        //                                     '#071125';
-        // }
+
+        function getColor(number){
+            return number > 1000000 ? 'rgb(245,9,28)' :
+                number > 500000  ? 'rgb(200,7,19)' :
+                    number > 200000  ? 'rgb(148,6,15)' :
+                        number > 100000  ? 'rgb(120,6,14)' :
+                            number > 80000   ? 'rgb(109,6,11)' :
+                                number > 50000   ? 'rgb(84,5,8)' :
+                                    number > 25000   ? 'rgb(64,5,7)' :
+                                        number > 10000 ? 'rgb(35,5,6)':
+                                            'rgb(18,5,5)';
+        }
 
 
 
@@ -94,10 +131,13 @@
 
 
                 data_norm.forEach(function(row) {
-                    var green = (row["PERMIT_NUM"] / (max/10)) * 255;
-                    var color = "rgba(" + green + ", " + 0 + ", " + 0 + ", 1)";
+                    // var green = (row["PERMIT_NUM"] / (max/10)) * 255;
+                    // var color = "rgba(" + green + ", " + 0 + ", " + 0 + ", 1)";
 
+                    // new range color
+                    let color = getColor(parseInt(row["PERMIT_NUM"]));
                     expression.push(row["STATE_ID"], color);
+
                 });
                 console.log(max,min);
 
