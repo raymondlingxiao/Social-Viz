@@ -1,0 +1,19 @@
+{
+  "name": "cs467-crime-map",
+  "version": "1.0.0",
+  "description": "## Progress:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raymondlingxiao/cs467-crime-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raymondlingxiao/cs467-crime-map/issues"
+  },
+  "homepage": "https://github.com/raymondlingxiao/cs467-crime-map#readme"
+}
