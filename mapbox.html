@@ -78,6 +78,7 @@
 
         height : 10px;
       }
+
     </style>
 </head>
 <body>
@@ -104,11 +105,11 @@
     </div>
     <div class='filter'>
         <h4 class = "title">Filter</h4>
-        <button class = "bu" id = "'2012'" onClick = "choose('2012')">2012</button>
-        <button class = "bu" onClick = "choose('2013')">2013</button>
-        <button class = "bu" onClick = "choose('2014')">2014</button>
-        <button class = "bu" onClick = "choose('2015')">2015</button>
-        <button class = "bu" onClick = "choose('2016')">2016</button>
+        <button class = "bu" id = "b1" onClick = "choose('2012')">2012</button>
+        <button class = "bu" id = "b2" onClick = "choose('2013')">2013</button>
+        <button class = "bu" id = "b3" onClick = "choose('2014')">2014</button>
+        <button class = "bu" id = "b4" onClick = "choose('2015')">2015</button>
+        <button class = "bu" id = "b5" onClick = "choose('2016')">2016</button>
     </div>
     <script>
 
@@ -230,6 +231,7 @@
                    expression_heigh.push(0);
 
                    // add layer
+
                    map.addLayer({
                        "id": "stateLayer",
                        "type": "fill",
@@ -345,7 +347,42 @@
          function choose(choice){
            year = choice;
            console.log(year);
-           //document.getElementById(choice).style.backgroud = "red";
+           if (choice == '2012'){
+             document.getElementById('b1').style.color = "grey";
+             document.getElementById('b2').style.color = "black";
+             document.getElementById('b3').style.color = "black";
+             document.getElementById('b4').style.color = "black";
+             document.getElementById('b5').style.color = "black";
+           }
+           if (choice == '2013'){
+             document.getElementById('b1').style.color = "black";
+             document.getElementById('b2').style.color = "grey";
+             document.getElementById('b3').style.color = "black";
+             document.getElementById('b4').style.color = "black";
+             document.getElementById('b5').style.color = "black";
+           }
+           if (choice == '2014'){
+             document.getElementById('b1').style.color = "black";
+             document.getElementById('b2').style.color = "black";
+             document.getElementById('b3').style.color = "grey";
+             document.getElementById('b4').style.color = "black";
+             document.getElementById('b5').style.color = "black";
+           }
+           if (choice == '2015'){
+             document.getElementById('b1').style.color = "black";
+             document.getElementById('b2').style.color = "black";
+             document.getElementById('b3').style.color = "black";
+             document.getElementById('b4').style.color = "grey";
+             document.getElementById('b5').style.color = "black";
+           }
+           if (choice == '2016'){
+             document.getElementById('b1').style.color = "black";
+             document.getElementById('b2').style.color = "black";
+             document.getElementById('b3').style.color = "black";
+             document.getElementById('b4').style.color = "black";
+             document.getElementById('b5').style.color = "grey";
+           }
+
            changetonewyear();
 
          };
