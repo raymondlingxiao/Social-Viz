@@ -175,7 +175,7 @@
            button.setAttribute("id", "extrude");
            button.setAttribute("class", "mapboxgl-ctrl-group");
            button.innerHTML = "3D";
-           mapdiv.appendChild(button);
+           // mapdiv.appendChild(button);
 
 
 
@@ -521,7 +521,7 @@
 
                 popup.remove();
                 // exclude no-need land
-                if (features !== '' && features[0]["layer"]["id"] === 'stateLayer') {
+                if (features !==  null && features[0]["layer"]["id"] === 'stateLayer') {
                     // console.log(features)
                     var popupText = "";
 
