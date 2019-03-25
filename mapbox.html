@@ -120,6 +120,7 @@
             center: [-99.9, 41.5],
             zoom:3.5
         });
+        let baseRadius = 2;
         map.addControl(new mapboxgl.NavigationControl());
         map.addControl(new mapboxgl.FullscreenControl());
 
@@ -201,6 +202,58 @@
                console.log("fhueqihf");
 
                map.on('load', function() {
+
+                // add points function
+
+
+                   let exp_other = [
+                       "all",
+                       ['==','year',parseInt(year)],
+                       ['!=','cause_short','Gunfire']
+                   ];
+
+                   let exp_gunfire = [
+                       "all",
+                       ['==','year',parseInt(year)],
+                       ['==','cause_short','Gunfire']
+                   ];
+
+                   map.addLayer({
+                       id: 'gunfire_points',
+                       type: 'circle',
+                       source: {
+                           type: 'vector',
+                           url: 'mapbox://raymondlx.00zyxnxb'
+                       },
+                       'source-layer': 'clean_data_with_location-atsza0',
+                       filter:exp_gunfire,
+                       paint:{
+                           'circle-radius': {
+                               'base': baseRadius,
+                               'stops': [[12, 3.5], [30, 180]]
+                           },
+                           'circle-color': "rgb(250,234,147)"
+                       }
+                   });
+
+                   map.addLayer({
+                       id: 'other_points',
+                       type: 'circle',
+                       source: {
+                           type: 'vector',
+                           url: 'mapbox://raymondlx.00zyxnxb'
+                       },
+                       'source-layer': 'clean_data_with_location-atsza0',
+                       filter:exp_other,
+                       paint:{
+                           'circle-radius': {
+                               'base': baseRadius,
+                               'stops': [[12, 3.5], [10, 180]]
+                           },
+                           'circle-color': "rgb(155,232,224)"
+                       }
+                   });
+
 
 
                    map.addSource("states", {
@@ -411,6 +464,56 @@
 
             map.on('load', function() {
 
+                let exp_other = [
+                    "all",
+                    ['==','year',parseInt(year)],
+                    ['!=','cause_short','Gunfire']
+                ];
+
+                let exp_gunfire = [
+                    "all",
+                    ['==','year',parseInt(year)],
+                    ['==','cause_short','Gunfire']
+                ];
+
+                map.addLayer({
+                    id: 'gunfire_points',
+                    type: 'circle',
+                    source: {
+                        type: 'vector',
+                        url: 'mapbox://raymondlx.00zyxnxb'
+                    },
+                    'source-layer': 'clean_data_with_location-atsza0',
+                    filter:exp_gunfire,
+                    paint:{
+                        'circle-radius': {
+                            'base': baseRadius,
+                            'stops': [[12, 3.5], [30, 180]]
+                        },
+                        'circle-color': "rgb(250,234,147)"
+                    }
+                });
+
+                map.addLayer({
+                    id: 'other_points',
+                    type: 'circle',
+                    source: {
+                        type: 'vector',
+                        url: 'mapbox://raymondlx.00zyxnxb'
+                    },
+                    'source-layer': 'clean_data_with_location-atsza0',
+                    filter:exp_other,
+                    paint:{
+                        'circle-radius': {
+                            'base': baseRadius,
+                            'stops': [[12, 3.5], [30, 180]]
+                        },
+                        'circle-color': "rgb(155,232,224)"
+                    }
+                });
+
+
+
 
                 map.addSource("states", {
                     type: "vector",
@@ -466,7 +569,7 @@
                         'fill-extrusion-opacity': 0.9,
                         'fill-extrusion-base': 0
                     }
-                }, 'waterway-label');
+                });
 
                 var overView = {
                     center: [-95.52, 39.94],
