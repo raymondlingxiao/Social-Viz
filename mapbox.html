@@ -348,11 +348,16 @@
                            setTimeout(function() {
                                map.flyTo(highestView);
                                map.setLayoutProperty('stateLayer', 'visibility', 'none');
+                               map.setLayoutProperty('gunfire_points','visibility','none');
+                               map.setLayoutProperty('other_points','visibility','none');
                            }, 1000);
                        }
                        else {
                            map.setLayoutProperty('stateLayer', 'visibility', 'visible');
+                           map.setLayoutProperty('gunfire_points','visibility','visible');
+                           map.setLayoutProperty('other_points','visibility','visible');
                            map.setLayoutProperty('3dLayer', 'visibility', 'none');
+
                            ex.className = 'mapboxgl-ctrl-group';
                            map.flyTo(overView);
                        }
@@ -574,7 +579,7 @@
                         'fill-extrusion-opacity': 0.9,
                         'fill-extrusion-base': 0
                     }
-                });
+                },'waterway-label');
 
                 var overView = {
                     center: [-95.52, 39.94],
@@ -606,10 +611,16 @@
                         setTimeout(function() {
                             map.flyTo(highestView);
                             map.setLayoutProperty('stateLayer', 'visibility', 'none');
+                            map.setLayoutProperty('gunfire_points','visibility','none');
+                            map.setLayoutProperty('other_points','visibility','none');
+
                         }, 1000);
                     }
                     else {
                         map.setLayoutProperty('stateLayer', 'visibility', 'visible');
+                        map.setLayoutProperty('gunfire_points','visibility','visible');
+                        map.setLayoutProperty('other_points','visibility','visible');
+
                         map.setLayoutProperty('3dLayer', 'visibility', 'none');
                         ex.className = 'mapboxgl-ctrl-group';
                         map.flyTo(overView);
