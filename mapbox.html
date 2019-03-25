@@ -125,7 +125,7 @@
             center: [-99.9, 41.5],
             zoom:3.5
         });
-        let baseRadius = 2;
+        let baseRadius = 4;
         map.addControl(new mapboxgl.NavigationControl());
         map.addControl(new mapboxgl.FullscreenControl());
 
@@ -233,10 +233,7 @@
                        'source-layer': 'clean_data_with_location-atsza0',
                        filter:exp_gunfire,
                        paint:{
-                           'circle-radius': {
-                               'base': baseRadius,
-                               'stops': [[12, 3.5], [30, 180]]
-                           },
+                           'circle-radius': baseRadius,
                            'circle-color': "rgb(250,234,147)"
                        }
                    });
@@ -251,10 +248,7 @@
                        'source-layer': 'clean_data_with_location-atsza0',
                        filter:exp_other,
                        paint:{
-                           'circle-radius': {
-                               'base': baseRadius,
-                               'stops': [[12, 3.5], [10, 180]]
-                           },
+                           'circle-radius': baseRadius,
                            'circle-color': "rgb(155,232,224)"
                        }
                    });
@@ -496,10 +490,8 @@
                     'source-layer': 'clean_data_with_location-atsza0',
                     filter:exp_gunfire,
                     paint:{
-                        'circle-radius': {
-                            'base': baseRadius,
-                            'stops': [[12, 3.5], [30, 180]]
-                        },
+                        'circle-radius': baseRadius,
+
                         'circle-color': "rgb(250,234,147)"
                     }
                 });
@@ -514,10 +506,7 @@
                     'source-layer': 'clean_data_with_location-atsza0',
                     filter:exp_other,
                     paint:{
-                        'circle-radius': {
-                            'base': baseRadius,
-                            'stops': [[12, 3.5], [30, 180]]
-                        },
+                        'circle-radius': baseRadius,
                         'circle-color': "rgb(155,232,224)"
                     }
                 });
