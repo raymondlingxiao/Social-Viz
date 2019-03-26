@@ -28,6 +28,7 @@
 
         .legend h4 {
             margin: 0 0 10px;
+            text-align: center;
         }
 
         .legend div span {
@@ -95,7 +96,7 @@
     </div>
 
     <div id='state-legend' class='legend'>
-        <h4>Permits Amount</h4>
+        <h4>Gun Sales</h4>
         <div><span style='background-color: rgb(18,5,5)'></span><100,000</div>
         <!--<div><span style='background-color: rgb(35,5,6)'></span>100,000</div>-->
         <div><span style='background-color: rgb(64,5,7)'></span>150,000</div>
@@ -104,7 +105,7 @@
         <!--<div><span style='background-color: rgb(120,6,14)'></span>100,000</div>-->
         <!--<div><span style='background-color: rgb(148,6,15)'></span>200,000</div>-->
         <div><span style='background-color: rgb(200,7,19)'></span>600,000</div>
-        <div><span style='background-color: rgb(245,9,28)'></span>>100,000,000</div>
+        <div><span style='background-color: rgb(245,9,28)'></span>>1,000,000</div>
         <br>
         <h4>Death Cause Type</h4>
         <div><span style='background-color: rgb(250,234,147)'></span>Gunfire</div>
@@ -118,6 +119,7 @@
         <button class = "bu" id = "b3" onClick = "choose('2014')">2014</button>
         <button class = "bu" id = "b4" onClick = "choose('2015')">2015</button>
         <button class = "bu" id = "b5" onClick = "choose('2016')">2016</button>
+
     </div>
     <script>
 
@@ -126,7 +128,7 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v9',
             center: [-99.9, 41.5],
-            zoom:3.5
+            zoom:3
         });
         let baseRadius = 4;
         map.addControl(new mapboxgl.NavigationControl());
@@ -382,7 +384,7 @@
                        let id = features[0].properties["STATE_ID"];
                        for (let i=0;i<data_norm.length;i++){
                            if (data_norm[i]["STATE_ID"] === id ){
-                               popupText += "<strong>" + fields[1] + ":</strong> " + data_norm[i]["PERMIT_NUM"] + "<" + "br" + ">";
+                               popupText += "<strong>" + "GUN_SALES" + ":</strong> " + data_norm[i]["PERMIT_NUM"] + "<" + "br" + ">";
                                break;
                            }
                        }
@@ -642,7 +644,7 @@
                     let id = features[0].properties["STATE_ID"];
                     for (let i=0;i<data_norm.length;i++){
                         if (data_norm[i]["STATE_ID"] === id ){
-                            popupText += "<strong>" + fields[1] + ":</strong> " + data_norm[i]["PERMIT_NUM"] + "<" + "br" + ">";
+                            popupText += "<strong>" + "GUN_SALES" + ":</strong> " + data_norm[i]["PERMIT_NUM"] + "<" + "br" + ">";
                             break;
                         }
                     }
