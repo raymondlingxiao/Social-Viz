@@ -1,4 +1,5 @@
-# [cs467-crime-map](https://github.com/raymondlingxiao/cs467-crime-map)
+# [cs467-crime-map](https://raymondlingxiao.github.io/cs467-crime-map/)
+https://raymondlingxiao.github.io/cs467-crime-map/
 
 ## Running instruction
 1. Just simply open the `index.html`
