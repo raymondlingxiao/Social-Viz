@@ -1,7 +1,7 @@
 # [cs467-crime-map](https://github.com/raymondlingxiao/cs467-crime-map)
 
 ## Running instruction
-1. Just simply open the `mapbox.html`
+1. Just simply open the `index.html`
 2. The `Filter Function` by years are on the left top of the map.
 3. The `3D Function` button is on the right. 
 4. The `Legend` are all at the bottom.
