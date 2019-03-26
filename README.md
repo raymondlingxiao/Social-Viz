@@ -15,6 +15,6 @@ https://raymondlingxiao.github.io/cs467-crime-map/
 2. Conducted Data pre-processing.
 
 
-#### Xiaolu Qi & Minghao Guo
+#### Xiaolu Qi (xiaoluq2) & Minghao Guo (mg27)
 1. Constructed `User Interaction` Module for `3D` and `Filter` functions.
 2. Conducted Data pre-processing.
