@@ -30,7 +30,7 @@ function choose(year){
             paint:{
                 // may need to scale
                 'circle-radius': ['get','fatalities'] ,
-                'circle-color': "#f432ff"
+                'circle-color': "#ff3161"
             }
         });
 
