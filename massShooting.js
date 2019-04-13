@@ -1,10 +1,22 @@
 
+//gloabl map
+
+let map = null;
+
 choose("2018");
 
+function mass_shooting_controller() {
+    if (map.getLayoutProperty('mass_shooting','visibility') === 'visible'){
+        map.setLayoutProperty('mass_shooting','visibility','none');
+    }
+    else
+        map.setLayoutProperty('mass_shooting','visibility','visible');
+
+}
 
 function choose(year){
     mapboxgl.accessToken = 'pk.eyJ1IjoicmF5bW9uZGx4IiwiYSI6ImNqc3RpZ3R6NjI0NDIzeXBkNDlucW81MXEifQ.VThJpKXtsJZEQhScbEiItw';
-    var map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
         container: 'map',
         // change style
         style: 'mapbox://styles/mapbox/streets-v11',
