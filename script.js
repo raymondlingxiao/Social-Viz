@@ -6,13 +6,30 @@ button.setAttribute("class", "mapboxgl-ctrl-group");
 button.innerHTML = "3D";
 mapdiv.appendChild(button);
 
+// global map
+let map = null;
+
+
 // entry
 choose(2012);
+
+function gun_sale_controller() {
+    if ((map.getLayoutProperty('stateLayer', 'visibility')) === 'visible') {
+
+        map.setLayoutProperty('3dLayer', 'visibility', 'none');
+        map.setLayoutProperty('stateLayer', 'visibility', 'none');
+
+    }
+    else {
+        map.setLayoutProperty('3dLayer', 'visibility', 'none');
+        map.setLayoutProperty('stateLayer', 'visibility', 'visible');
+    }
+}
 
 
 function choose(year){
     mapboxgl.accessToken = 'pk.eyJ1IjoicmF5bW9uZGx4IiwiYSI6ImNqc3RpZ3R6NjI0NDIzeXBkNDlucW81MXEifQ.VThJpKXtsJZEQhScbEiItw';
-    var map = new mapboxgl.Map({
+     map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v9',
         center: [-99.9, 41.5],
