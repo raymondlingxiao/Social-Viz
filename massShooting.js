@@ -1,7 +1,8 @@
 
-mass_shooting_map("2018");
+choose("2018");
 
-function mass_shooting_map(year){
+
+function choose(year){
     mapboxgl.accessToken = 'pk.eyJ1IjoicmF5bW9uZGx4IiwiYSI6ImNqc3RpZ3R6NjI0NDIzeXBkNDlucW81MXEifQ.VThJpKXtsJZEQhScbEiItw';
     var map = new mapboxgl.Map({
         container: 'map',
