@@ -1,0 +1,2092 @@
+{
+	"2012": {
+		"Alabama": {
+			"permit": 415892,
+			"id": "01",
+			"pop": "4779736",
+			"permitperperson": 0.08701150021674837,
+			"hunting": "607121",
+			"huntingperperson": 0.12701977682449409
+		},
+		"Alaska": {
+			"permit": 88659,
+			"id": "02",
+			"pop": "710231",
+			"permitperperson": 0.12483121688577378,
+			"hunting": "353266",
+			"huntingperperson": 0.4973959176662241
+		},
+		"Arizona": {
+			"permit": 284077,
+			"id": "04",
+			"pop": "6392017",
+			"permitperperson": 0.04444246628255213,
+			"hunting": "409680",
+			"huntingperperson": 0.06409244531108099
+		},
+		"Arkansas": {
+			"permit": 189278,
+			"id": "05",
+			"pop": "2915918",
+			"permitperperson": 0.06491197626270698,
+			"hunting": "468656",
+			"huntingperperson": 0.160723312521134
+		},
+		"California": {
+			"permit": 878648,
+			"id": "06",
+			"pop": "37253956",
+			"permitperperson": 0.02358536097481835,
+			"hunting": "875297",
+			"huntingperperson": 0.023495410796104448
+		},
+		"Colorado": {
+			"permit": 416849,
+			"id": "08",
+			"pop": "5029196",
+			"permitperperson": 0.08288581315979732,
+			"hunting": "535893",
+			"huntingperperson": 0.10655639589310101
+		},
+		"Connecticut": {
+			"permit": 129314,
+			"id": "09",
+			"pop": "3574097",
+			"permitperperson": 0.03618088708840303,
+			"hunting": "135711",
+			"huntingperperson": 0.037970709804462495
+		},
+		"Delaware": {
+			"permit": 33709,
+			"id": "10",
+			"pop": "897934",
+			"permitperperson": 0.03754062102559876,
+			"hunting": "44087",
+			"huntingperperson": 0.04909826334674931
+		},
+		"District of Columbia": {
+			"permit": 493,
+			"id": "11",
+			"pop": "601723",
+			"permitperperson": 0.000819313870335686,
+			"hunting": 0,
+			"huntingperperson": 0.0
+		},
+		"Florida": {
+			"permit": 887459,
+			"id": "12",
+			"pop": "18801310",
+			"permitperperson": 0.04720197688352567,
+			"hunting": "326835",
+			"huntingperperson": 0.017383629119460293
+		},
+		"Georgia": {
+			"permit": 330646,
+			"id": "13",
+			"pop": "9687653",
+			"permitperperson": 0.03413066095575471,
+			"hunting": "1069502",
+			"huntingperperson": 0.11039846286814774
+		},
+		"Hawaii": {
+			"permit": 8,
+			"id": "15",
+			"pop": "1360301",
+			"permitperperson": 5.881051326140317e-6,
+			"hunting": "10421",
+			"huntingperperson": 0.007660804483713531
+		},
+		"Idaho": {
+			"permit": 106211,
+			"id": "16",
+			"pop": "1567582",
+			"permitperperson": 0.06775466929321719,
+			"hunting": "978693",
+			"huntingperperson": 0.6243328897627046
+		},
+		"Illinois": {
+			"permit": 411039,
+			"id": "17",
+			"pop": "12830632",
+			"permitperperson": 0.03203575630569094,
+			"hunting": "1489893",
+			"huntingperperson": 0.11612000094773196
+		},
+		"Indiana": {
+			"permit": 414351,
+			"id": "18",
+			"pop": "6483802",
+			"permitperperson": 0.06390556034869664,
+			"hunting": "489040",
+			"huntingperperson": 0.07542488188257446
+		},
+		"Iowa": {
+			"permit": 52031,
+			"id": "19",
+			"pop": "3046355",
+			"permitperperson": 0.01707975597066002,
+			"hunting": "943322",
+			"huntingperperson": 0.3096559659002316
+		},
+		"Kansas": {
+			"permit": 199803,
+			"id": "20",
+			"pop": "2853118",
+			"permitperperson": 0.0700297008395727,
+			"hunting": "514090",
+			"huntingperperson": 0.18018532707024384
+		},
+		"Kentucky": {
+			"permit": 287916,
+			"id": "21",
+			"pop": "4339367",
+			"permitperperson": 0.06634976944794022,
+			"hunting": "579026",
+			"huntingperperson": 0.13343559095139912
+		},
+		"Louisiana": {
+			"permit": 329388,
+			"id": "22",
+			"pop": "4533372",
+			"permitperperson": 0.07265849791281193,
+			"hunting": "599516",
+			"huntingperperson": 0.13224504849811575
+		},
+		"Maine": {
+			"permit": 97715,
+			"id": "23",
+			"pop": "1328361",
+			"permitperperson": 0.07356057577721718,
+			"hunting": "261404",
+			"huntingperperson": 0.19678686742534598
+		},
+		"Maryland": {
+			"permit": 146486,
+			"id": "24",
+			"pop": "5773552",
+			"permitperperson": 0.025371902773197504,
+			"hunting": "323275",
+			"huntingperperson": 0.05599239428344977
+		},
+		"Massachusetts": {
+			"permit": 103172,
+			"id": "25",
+			"pop": "6547629",
+			"permitperperson": 0.01575715423094375,
+			"hunting": "390013",
+			"huntingperperson": 0.05956553127857427
+		},
+		"Michigan": {
+			"permit": 199707,
+			"id": "26",
+			"pop": "9883640",
+			"permitperperson": 0.020205814861731102,
+			"hunting": "2005244",
+			"huntingperperson": 0.20288517185976018
+		},
+		"Minnesota": {
+			"permit": 283963,
+			"id": "27",
+			"pop": "5303925",
+			"permitperperson": 0.05353827589945182,
+			"hunting": "1424718",
+			"huntingperperson": 0.26861578925041363
+		},
+		"Mississippi": {
+			"permit": 203346,
+			"id": "28",
+			"pop": "2967297",
+			"permitperperson": 0.06852903501065111,
+			"hunting": "249109",
+			"huntingperperson": 0.08395148850957622
+		},
+		"Missouri": {
+			"permit": 486543,
+			"id": "29",
+			"pop": "5988927",
+			"permitperperson": 0.08124042921211096,
+			"hunting": "1776575",
+			"huntingperperson": 0.29664328852230126
+		},
+		"Montana": {
+			"permit": 114439,
+			"id": "30",
+			"pop": "989415",
+			"permitperperson": 0.11566329598803334,
+			"hunting": "1073594",
+			"huntingperperson": 1.0850795672190132
+		},
+		"Nebraska": {
+			"permit": 39655,
+			"id": "31",
+			"pop": "1826341",
+			"permitperperson": 0.021712812667513896,
+			"hunting": "451121",
+			"huntingperperson": 0.24700808885087724
+		},
+		"Nevada": {
+			"permit": 133854,
+			"id": "32",
+			"pop": "2700551",
+			"permitperperson": 0.04956544053417247,
+			"hunting": "130471",
+			"huntingperperson": 0.04831273321629549
+		},
+		"New Hampshire": {
+			"permit": 104073,
+			"id": "33",
+			"pop": "1316470",
+			"permitperperson": 0.07905459296451875,
+			"hunting": "218346",
+			"huntingperperson": 0.16585717866719332
+		},
+		"New Jersey": {
+			"permit": 92021,
+			"id": "34",
+			"pop": "8791894",
+			"permitperperson": 0.010466572959137133,
+			"hunting": "444884",
+			"huntingperperson": 0.05060161098393588
+		},
+		"New Mexico": {
+			"permit": 133934,
+			"id": "35",
+			"pop": "2059179",
+			"permitperperson": 0.06504242710322901,
+			"hunting": "269843",
+			"huntingperperson": 0.13104397432180495
+		},
+		"New York": {
+			"permit": 330286,
+			"id": "36",
+			"pop": "19378102",
+			"permitperperson": 0.017044290508946645,
+			"hunting": "1091187",
+			"huntingperperson": 0.05631031356940943
+		},
+		"North Carolina": {
+			"permit": 224941,
+			"id": "37",
+			"pop": "9535483",
+			"permitperperson": 0.023589890517344534,
+			"hunting": "352366",
+			"huntingperperson": 0.03695313598692379
+		},
+		"North Dakota": {
+			"permit": 76381,
+			"id": "38",
+			"pop": "672591",
+			"permitperperson": 0.11356232836894933,
+			"hunting": "646709",
+			"huntingperperson": 0.9615189617464402
+		},
+		"Ohio": {
+			"permit": 664848,
+			"id": "39",
+			"pop": "11536504",
+			"permitperperson": 0.05762993711093066,
+			"hunting": "423715",
+			"huntingperperson": 0.03672819772783852
+		},
+		"Oklahoma": {
+			"permit": 357169,
+			"id": "40",
+			"pop": "3751351",
+			"permitperperson": 0.09521076540158466,
+			"hunting": "301441",
+			"huntingperperson": 0.08035531732434528
+		},
+		"Oregon": {
+			"permit": 293272,
+			"id": "41",
+			"pop": "3831074",
+			"permitperperson": 0.07655085754020935,
+			"hunting": "1289930",
+			"huntingperperson": 0.3367019274490652
+		},
+		"Pennsylvania": {
+			"permit": 961482,
+			"id": "42",
+			"pop": "12702379",
+			"permitperperson": 0.07569306505497907,
+			"hunting": "2668549",
+			"huntingperperson": 0.2100826152329418
+		},
+		"Puerto Rico": {
+			"permit": 17263,
+			"id": "72",
+			"pop": "3725789",
+			"permitperperson": 0.004633381010035726,
+			"hunting": "10339",
+			"huntingperperson": 0.0027749826949405886
+		},
+		"Rhode Island": {
+			"permit": 27755,
+			"id": "44",
+			"pop": "1052567",
+			"permitperperson": 0.026368867730035238,
+			"hunting": "8798",
+			"huntingperperson": 0.008358612800895334
+		},
+		"South Carolina": {
+			"permit": 227014,
+			"id": "45",
+			"pop": "4625364",
+			"permitperperson": 0.049080245360148954,
+			"hunting": "638166",
+			"huntingperperson": 0.1379709791488843
+		},
+		"South Dakota": {
+			"permit": 93592,
+			"id": "46",
+			"pop": "814180",
+			"permitperperson": 0.11495246751332629,
+			"hunting": "432327",
+			"huntingperperson": 0.5309968311675551
+		},
+		"Tennessee": {
+			"permit": 503738,
+			"id": "47",
+			"pop": "6346105",
+			"permitperperson": 0.07937750793597018,
+			"hunting": "731401",
+			"huntingperperson": 0.11525195375746225
+		},
+		"Texas": {
+			"permit": 1251090,
+			"id": "48",
+			"pop": "25145561",
+			"permitperperson": 0.0497539108393724,
+			"hunting": "1442357",
+			"huntingperperson": 0.057360303076952626
+		},
+		"Utah": {
+			"permit": 110449,
+			"id": "49",
+			"pop": "2763885",
+			"permitperperson": 0.039961503463421956,
+			"hunting": "386191",
+			"huntingperperson": 0.13972759358656384
+		},
+		"Vermont": {
+			"permit": 38133,
+			"id": "50",
+			"pop": "625741",
+			"permitperperson": 0.060940548885241655,
+			"hunting": "191735",
+			"huntingperperson": 0.30641271708262685
+		},
+		"Virginia": {
+			"permit": 482846,
+			"id": "51",
+			"pop": "8001024",
+			"permitperperson": 0.06034802545274205,
+			"hunting": "789834",
+			"huntingperperson": 0.09871661427337301
+		},
+		"Washington": {
+			"permit": 385325,
+			"id": "53",
+			"pop": "6724540",
+			"permitperperson": 0.05730131726482406,
+			"hunting": "770206",
+			"huntingperperson": 0.11453660770848266
+		},
+		"West Virginia": {
+			"permit": 205423,
+			"id": "54",
+			"pop": "1852994",
+			"permitperperson": 0.1108600459580549,
+			"hunting": "778357",
+			"huntingperperson": 0.4200537076752542
+		},
+		"Wisconsin": {
+			"permit": 356893,
+			"id": "55",
+			"pop": "5686986",
+			"permitperperson": 0.06275608907776456,
+			"hunting": "3041084",
+			"huntingperperson": 0.5347444147040278
+		},
+		"Wyoming": {
+			"permit": 60315,
+			"id": "56",
+			"pop": "563626",
+			"permitperperson": 0.10701245151926987,
+			"hunting": "265887",
+			"huntingperperson": 0.4717436739965864
+		}
+	},
+	"2013": {
+		"Alabama": {
+			"permit": 456974,
+			"id": "01",
+			"pop": "4779736",
+			"permitperperson": 0.09560653559108703,
+			"hunting": "609156",
+			"huntingperperson": 0.12744553255660981
+		},
+		"Alaska": {
+			"permit": 93641,
+			"id": "02",
+			"pop": "710231",
+			"permitperperson": 0.13184583607305228,
+			"hunting": "278400",
+			"huntingperperson": 0.3919851428619703
+		},
+		"Arizona": {
+			"permit": 286630,
+			"id": "04",
+			"pop": "6392017",
+			"permitperperson": 0.04484187072718987,
+			"hunting": "414623",
+			"huntingperperson": 0.06486575364239489
+		},
+		"Arkansas": {
+			"permit": 195357,
+			"id": "05",
+			"pop": "2915918",
+			"permitperperson": 0.06699673996319512,
+			"hunting": "475057",
+			"huntingperperson": 0.16291850456700085
+		},
+		"California": {
+			"permit": 1026894,
+			"id": "06",
+			"pop": "37253956",
+			"permitperperson": 0.027564696753279036,
+			"hunting": "834739",
+			"huntingperperson": 0.022406721047289583
+		},
+		"Colorado": {
+			"permit": 471569,
+			"id": "08",
+			"pop": "5029196",
+			"permitperperson": 0.09376627993818495,
+			"hunting": "537371",
+			"huntingperperson": 0.10685027984592368
+		},
+		"Connecticut": {
+			"permit": 139006,
+			"id": "09",
+			"pop": "3574097",
+			"permitperperson": 0.038892620989301636,
+			"hunting": "127612",
+			"huntingperperson": 0.035704682889132554
+		},
+		"Delaware": {
+			"permit": 41452,
+			"id": "10",
+			"pop": "897934",
+			"permitperperson": 0.04616374922878519,
+			"hunting": "42341",
+			"huntingperperson": 0.047153799722474035
+		},
+		"District of Columbia": {
+			"permit": 546,
+			"id": "11",
+			"pop": "601723",
+			"permitperperson": 0.000907394266132423,
+			"hunting": 0,
+			"huntingperperson": 0.0
+		},
+		"Florida": {
+			"permit": 954898,
+			"id": "12",
+			"pop": "18801310",
+			"permitperperson": 0.050788907794190936,
+			"hunting": "369998",
+			"huntingperperson": 0.019679373405363774
+		},
+		"Georgia": {
+			"permit": 338668,
+			"id": "13",
+			"pop": "9687653",
+			"permitperperson": 0.03495872529703531,
+			"hunting": "964738",
+			"huntingperperson": 0.09958428527528804
+		},
+		"Hawaii": {
+			"permit": 0,
+			"id": "15",
+			"pop": "1360301",
+			"permitperperson": 0.0,
+			"hunting": "10653",
+			"huntingperperson": 0.0078313549721716
+		},
+		"Idaho": {
+			"permit": 108155,
+			"id": "16",
+			"pop": "1567582",
+			"permitperperson": 0.06899479580653516,
+			"hunting": "958761",
+			"huntingperperson": 0.6116177654502284
+		},
+		"Illinois": {
+			"permit": 485040,
+			"id": "17",
+			"pop": "12830632",
+			"permitperperson": 0.03780328202071418,
+			"hunting": "1448776",
+			"huntingperperson": 0.11291540432302945
+		},
+		"Indiana": {
+			"permit": 455220,
+			"id": "18",
+			"pop": "6483802",
+			"permitperperson": 0.07020880649964327,
+			"hunting": "491802",
+			"huntingperperson": 0.07585086651319704
+		},
+		"Iowa": {
+			"permit": 47975,
+			"id": "19",
+			"pop": "3046355",
+			"permitperperson": 0.015748328740412723,
+			"hunting": "876313",
+			"huntingperperson": 0.2876595144032787
+		},
+		"Kansas": {
+			"permit": 199938,
+			"id": "20",
+			"pop": "2853118",
+			"permitperperson": 0.07007701749454456,
+			"hunting": "489223",
+			"huntingperperson": 0.17146959922442745
+		},
+		"Kentucky": {
+			"permit": 290011,
+			"id": "21",
+			"pop": "4339367",
+			"permitperperson": 0.06683255875799396,
+			"hunting": "566072",
+			"huntingperperson": 0.13045036292159662
+		},
+		"Louisiana": {
+			"permit": 358712,
+			"id": "22",
+			"pop": "4533372",
+			"permitperperson": 0.07912697215229635,
+			"hunting": "621388",
+			"huntingperperson": 0.1370697132289166
+		},
+		"Maine": {
+			"permit": 102725,
+			"id": "23",
+			"pop": "1328361",
+			"permitperperson": 0.07733214088640061,
+			"hunting": "251988",
+			"huntingperperson": 0.1896984328808208
+		},
+		"Maryland": {
+			"permit": 241986,
+			"id": "24",
+			"pop": "5773552",
+			"permitperperson": 0.04191284671896953,
+			"hunting": "0",
+			"huntingperperson": 0.0
+		},
+		"Massachusetts": {
+			"permit": 115466,
+			"id": "25",
+			"pop": "6547629",
+			"permitperperson": 0.01763478046786096,
+			"hunting": "227487",
+			"huntingperperson": 0.034743416280916345
+		},
+		"Michigan": {
+			"permit": 326506,
+			"id": "26",
+			"pop": "9883640",
+			"permitperperson": 0.033034995204196026,
+			"hunting": "1946100",
+			"huntingperperson": 0.1969011416846425
+		},
+		"Minnesota": {
+			"permit": 312531,
+			"id": "27",
+			"pop": "5303925",
+			"permitperperson": 0.05892447574202124,
+			"hunting": "1553789",
+			"huntingperperson": 0.2929507864458868
+		},
+		"Mississippi": {
+			"permit": 210943,
+			"id": "28",
+			"pop": "2967297",
+			"permitperperson": 0.0710892775478828,
+			"hunting": "245028",
+			"huntingperperson": 0.08257616275013926
+		},
+		"Missouri": {
+			"permit": 520239,
+			"id": "29",
+			"pop": "5988927",
+			"permitperperson": 0.08686681270284309,
+			"hunting": "1765901",
+			"huntingperperson": 0.29486099930755544
+		},
+		"Montana": {
+			"permit": 114754,
+			"id": "30",
+			"pop": "989415",
+			"permitperperson": 0.11598166593391045,
+			"hunting": "1005130",
+			"huntingperperson": 1.0158831228554246
+		},
+		"Nebraska": {
+			"permit": 36529,
+			"id": "31",
+			"pop": "1826341",
+			"permitperperson": 0.020001193643465268,
+			"hunting": "420893",
+			"huntingperperson": 0.23045696285633405
+		},
+		"Nevada": {
+			"permit": 127087,
+			"id": "32",
+			"pop": "2700551",
+			"permitperperson": 0.047059655603615705,
+			"hunting": "128661",
+			"huntingperperson": 0.04764249962322504
+		},
+		"New Hampshire": {
+			"permit": 113310,
+			"id": "33",
+			"pop": "1316470",
+			"permitperperson": 0.08607108403533692,
+			"hunting": "209194",
+			"huntingperperson": 0.15890525420252646
+		},
+		"New Jersey": {
+			"permit": 128774,
+			"id": "34",
+			"pop": "8791894",
+			"permitperperson": 0.014646900883927854,
+			"hunting": "368420",
+			"huntingperperson": 0.04190450885781835
+		},
+		"New Mexico": {
+			"permit": 144827,
+			"id": "35",
+			"pop": "2059179",
+			"permitperperson": 0.07033239946600077,
+			"hunting": "2648830",
+			"huntingperperson": 1.286352473485792
+		},
+		"New York": {
+			"permit": 345244,
+			"id": "36",
+			"pop": "19378102",
+			"permitperperson": 0.01781619273136244,
+			"hunting": "1065247",
+			"huntingperperson": 0.054971689177815246
+		},
+		"North Carolina": {
+			"permit": 235912,
+			"id": "37",
+			"pop": "9535483",
+			"permitperperson": 0.024740435277373993,
+			"hunting": "358606",
+			"huntingperperson": 0.037607533881608306
+		},
+		"North Dakota": {
+			"permit": 77615,
+			"id": "38",
+			"pop": "672591",
+			"permitperperson": 0.11539702434317438,
+			"hunting": "625338",
+			"huntingperperson": 0.929744822633666
+		},
+		"Ohio": {
+			"permit": 718374,
+			"id": "39",
+			"pop": "11536504",
+			"permitperperson": 0.062269644252712954,
+			"hunting": "416101",
+			"huntingperperson": 0.03606820575800086
+		},
+		"Oklahoma": {
+			"permit": 370453,
+			"id": "40",
+			"pop": "3751351",
+			"permitperperson": 0.0987518896525545,
+			"hunting": "289240",
+			"huntingperperson": 0.07710288906583256
+		},
+		"Oregon": {
+			"permit": 301108,
+			"id": "41",
+			"pop": "3831074",
+			"permitperperson": 0.07859623698210998,
+			"hunting": "1255439",
+			"huntingperperson": 0.3276989690097346
+		},
+		"Pennsylvania": {
+			"permit": 842589,
+			"id": "42",
+			"pop": "12702379",
+			"permitperperson": 0.06633316483471324,
+			"hunting": "2427886",
+			"huntingperperson": 0.19113632178665116
+		},
+		"Puerto Rico": {
+			"permit": 18750,
+			"id": "72",
+			"pop": "3725789",
+			"permitperperson": 0.0050324911045687235,
+			"hunting": "5266",
+			"huntingperperson": 0.0014133919016884745
+		},
+		"Rhode Island": {
+			"permit": 30790,
+			"id": "44",
+			"pop": "1052567",
+			"permitperperson": 0.029252294628275444,
+			"hunting": "8605",
+			"huntingperperson": 0.008175251551682696
+		},
+		"South Carolina": {
+			"permit": 228439,
+			"id": "45",
+			"pop": "4625364",
+			"permitperperson": 0.04938832922122453,
+			"hunting": "399386",
+			"huntingperperson": 0.08634693399265442
+		},
+		"South Dakota": {
+			"permit": 97377,
+			"id": "46",
+			"pop": "814180",
+			"permitperperson": 0.11960131666216316,
+			"hunting": "430552",
+			"huntingperperson": 0.5288167235746395
+		},
+		"Tennessee": {
+			"permit": 533609,
+			"id": "47",
+			"pop": "6346105",
+			"permitperperson": 0.08408448962001101,
+			"hunting": "697018",
+			"huntingperperson": 0.10983398478279197
+		},
+		"Texas": {
+			"permit": 1344936,
+			"id": "48",
+			"pop": "25145561",
+			"permitperperson": 0.05348602085274614,
+			"hunting": "1473996",
+			"huntingperperson": 0.05861853708493519
+		},
+		"Utah": {
+			"permit": 113684,
+			"id": "49",
+			"pop": "2763885",
+			"permitperperson": 0.04113195737159831,
+			"hunting": "385032",
+			"huntingperperson": 0.13930825631312446
+		},
+		"Vermont": {
+			"permit": 39755,
+			"id": "50",
+			"pop": "625741",
+			"permitperperson": 0.06353267565973782,
+			"hunting": "189241",
+			"huntingperperson": 0.3024270424984139
+		},
+		"Virginia": {
+			"permit": 536222,
+			"id": "51",
+			"pop": "8001024",
+			"permitperperson": 0.0670191715460421,
+			"hunting": "816776",
+			"huntingperperson": 0.10208393325654316
+		},
+		"Washington": {
+			"permit": 407878,
+			"id": "53",
+			"pop": "6724540",
+			"permitperperson": 0.06065515262010487,
+			"hunting": "738385",
+			"huntingperperson": 0.10980453681590116
+		},
+		"West Virginia": {
+			"permit": 229040,
+			"id": "54",
+			"pop": "1852994",
+			"permitperperson": 0.123605365154987,
+			"hunting": "710174",
+			"huntingperperson": 0.3832575820536926
+		},
+		"Wisconsin": {
+			"permit": 365619,
+			"id": "55",
+			"pop": "5686986",
+			"permitperperson": 0.06429046950352964,
+			"hunting": "2941549",
+			"huntingperperson": 0.5172421736223722
+		},
+		"Wyoming": {
+			"permit": 64916,
+			"id": "56",
+			"pop": "563626",
+			"permitperperson": 0.115175666133216,
+			"hunting": "269424",
+			"huntingperperson": 0.4780191119643168
+		}
+	},
+	"2014": {
+		"Alabama": {
+			"permit": 402588,
+			"id": "01",
+			"pop": "4779736",
+			"permitperperson": 0.08422808288993366,
+			"hunting": "597095",
+			"huntingperperson": 0.12492217143373609
+		},
+		"Alaska": {
+			"permit": 87400,
+			"id": "02",
+			"pop": "710231",
+			"permitperperson": 0.12305855418870762,
+			"hunting": "287352",
+			"huntingperperson": 0.40458949271434225
+		},
+		"Arizona": {
+			"permit": 248333,
+			"id": "04",
+			"pop": "6392017",
+			"permitperperson": 0.038850491167342016,
+			"hunting": "409672",
+			"huntingperperson": 0.06409119374995405
+		},
+		"Arkansas": {
+			"permit": 165676,
+			"id": "05",
+			"pop": "2915918",
+			"permitperperson": 0.056817784313550654,
+			"hunting": "492479",
+			"huntingperperson": 0.1688932953532987
+		},
+		"California": {
+			"permit": 951462,
+			"id": "06",
+			"pop": "37253956",
+			"permitperperson": 0.02553989165607003,
+			"hunting": "847348",
+			"huntingperperson": 0.022745181746604306
+		},
+		"Colorado": {
+			"permit": 395079,
+			"id": "08",
+			"pop": "5029196",
+			"permitperperson": 0.07855708944332256,
+			"hunting": "528174",
+			"huntingperperson": 0.10502155811783832
+		},
+		"Connecticut": {
+			"permit": 151912,
+			"id": "09",
+			"pop": "3574097",
+			"permitperperson": 0.04250360300797656,
+			"hunting": "118798",
+			"huntingperperson": 0.03323860544355679
+		},
+		"Delaware": {
+			"permit": 44057,
+			"id": "10",
+			"pop": "897934",
+			"permitperperson": 0.049064853318840806,
+			"hunting": "29513",
+			"huntingperperson": 0.03286767178879517
+		},
+		"District of Columbia": {
+			"permit": 562,
+			"id": "11",
+			"pop": "601723",
+			"permitperperson": 0.0009339845742974758,
+			"hunting": 0,
+			"huntingperperson": 0.0
+		},
+		"Florida": {
+			"permit": 858435,
+			"id": "12",
+			"pop": "18801310",
+			"permitperperson": 0.04565825466416968,
+			"hunting": "356262",
+			"huntingperperson": 0.018948786015442542
+		},
+		"Georgia": {
+			"permit": 310533,
+			"id": "13",
+			"pop": "9687653",
+			"permitperperson": 0.03205451310033503,
+			"hunting": "1028840",
+			"huntingperperson": 0.10620116141649583
+		},
+		"Hawaii": {
+			"permit": 0,
+			"id": "15",
+			"pop": "1360301",
+			"permitperperson": 0.0,
+			"hunting": "7970",
+			"huntingperperson": 0.005858997383667291
+		},
+		"Idaho": {
+			"permit": 94933,
+			"id": "16",
+			"pop": "1567582",
+			"permitperperson": 0.06056014932552173,
+			"hunting": "1015884",
+			"huntingperperson": 0.6480579644318447
+		},
+		"Illinois": {
+			"permit": 448597,
+			"id": "17",
+			"pop": "12830632",
+			"permitperperson": 0.034962969867735276,
+			"hunting": "1436679",
+			"huntingperperson": 0.11197258248853213
+		},
+		"Indiana": {
+			"permit": 415558,
+			"id": "18",
+			"pop": "6483802",
+			"permitperperson": 0.06409171655766169,
+			"hunting": "497715",
+			"huntingperperson": 0.07676283143748067
+		},
+		"Iowa": {
+			"permit": 41283,
+			"id": "19",
+			"pop": "3046355",
+			"permitperperson": 0.013551605114965263,
+			"hunting": "860078",
+			"huntingperperson": 0.2823301946096236
+		},
+		"Kansas": {
+			"permit": 152692,
+			"id": "20",
+			"pop": "2853118",
+			"permitperperson": 0.05351759022935609,
+			"hunting": "471678",
+			"huntingperperson": 0.16532018654678846
+		},
+		"Kentucky": {
+			"permit": 247053,
+			"id": "21",
+			"pop": "4339367",
+			"permitperperson": 0.056932958194132924,
+			"hunting": "578862",
+			"huntingperperson": 0.1333977974206837
+		},
+		"Louisiana": {
+			"permit": 315852,
+			"id": "22",
+			"pop": "4533372",
+			"permitperperson": 0.06967264102747359,
+			"hunting": "645912",
+			"huntingperperson": 0.14247937297005409
+		},
+		"Maine": {
+			"permit": 86720,
+			"id": "23",
+			"pop": "1328361",
+			"permitperperson": 0.06528345833700328,
+			"hunting": "247098",
+			"huntingperperson": 0.1860172046604801
+		},
+		"Maryland": {
+			"permit": 131265,
+			"id": "24",
+			"pop": "5773552",
+			"permitperperson": 0.022735570754364037,
+			"hunting": "351004",
+			"huntingperperson": 0.06079515695017556
+		},
+		"Massachusetts": {
+			"permit": 106196,
+			"id": "25",
+			"pop": "6547629",
+			"permitperperson": 0.016219000801664236,
+			"hunting": "250778",
+			"huntingperperson": 0.03830058178311569
+		},
+		"Michigan": {
+			"permit": 263841,
+			"id": "26",
+			"pop": "9883640",
+			"permitperperson": 0.026694719759117087,
+			"hunting": "1906410",
+			"huntingperperson": 0.1928854146852779
+		},
+		"Minnesota": {
+			"permit": 256401,
+			"id": "27",
+			"pop": "5303925",
+			"permitperperson": 0.048341746913842104,
+			"hunting": "1525137",
+			"huntingperperson": 0.28754874927530083
+		},
+		"Mississippi": {
+			"permit": 191010,
+			"id": "28",
+			"pop": "2967297",
+			"permitperperson": 0.06437171607695488,
+			"hunting": "340714",
+			"huntingperperson": 0.11482301906415165
+		},
+		"Missouri": {
+			"permit": 468266,
+			"id": "29",
+			"pop": "5988927",
+			"permitperperson": 0.07818863045083034,
+			"hunting": "1787229",
+			"huntingperperson": 0.29842223824067315
+		},
+		"Montana": {
+			"permit": 102304,
+			"id": "30",
+			"pop": "989415",
+			"permitperperson": 0.10339847283495802,
+			"hunting": "964200",
+			"huntingperperson": 0.974515243856218
+		},
+		"Nebraska": {
+			"permit": 30555,
+			"id": "31",
+			"pop": "1826341",
+			"permitperperson": 0.016730172514333303,
+			"hunting": "447509",
+			"huntingperperson": 0.24503036399007633
+		},
+		"Nevada": {
+			"permit": 98804,
+			"id": "32",
+			"pop": "2700551",
+			"permitperperson": 0.036586607695985006,
+			"hunting": "129589",
+			"huntingperperson": 0.0479861332002247
+		},
+		"New Hampshire": {
+			"permit": 95134,
+			"id": "33",
+			"pop": "1316470",
+			"permitperperson": 0.07226446481879571,
+			"hunting": "203793",
+			"huntingperperson": 0.15480261608695983
+		},
+		"New Jersey": {
+			"permit": 99625,
+			"id": "34",
+			"pop": "8791894",
+			"permitperperson": 0.011331460547636266,
+			"hunting": "345727",
+			"huntingperperson": 0.03932338128735401
+		},
+		"New Mexico": {
+			"permit": 128976,
+			"id": "35",
+			"pop": "2059179",
+			"permitperperson": 0.06263467139087957,
+			"hunting": "250163",
+			"huntingperperson": 0.12148676729900607
+		},
+		"New York": {
+			"permit": 308304,
+			"id": "36",
+			"pop": "19378102",
+			"permitperperson": 0.01590991728704906,
+			"hunting": "1077625",
+			"huntingperperson": 0.05561045142604781
+		},
+		"North Carolina": {
+			"permit": 200537,
+			"id": "37",
+			"pop": "9535483",
+			"permitperperson": 0.021030607468966175,
+			"hunting": "352226",
+			"huntingperperson": 0.03693845398287638
+		},
+		"North Dakota": {
+			"permit": 65780,
+			"id": "38",
+			"pop": "672591",
+			"permitperperson": 0.0978008923699544,
+			"hunting": "587388",
+			"huntingperperson": 0.8733212308817692
+		},
+		"Ohio": {
+			"permit": 620996,
+			"id": "39",
+			"pop": "11536504",
+			"permitperperson": 0.05382878556623393,
+			"hunting": "1174147",
+			"huntingperperson": 0.1017766734185677
+		},
+		"Oklahoma": {
+			"permit": 332716,
+			"id": "40",
+			"pop": "3751351",
+			"permitperperson": 0.08869231378242132,
+			"hunting": "290577",
+			"huntingperperson": 0.07745929399834886
+		},
+		"Oregon": {
+			"permit": 266737,
+			"id": "41",
+			"pop": "3831074",
+			"permitperperson": 0.06962460135199686,
+			"hunting": "1240155",
+			"huntingperperson": 0.32370948720906983
+		},
+		"Pennsylvania": {
+			"permit": 725393,
+			"id": "42",
+			"pop": "12702379",
+			"permitperperson": 0.05710686163591875,
+			"hunting": "2668942",
+			"huntingperperson": 0.2101135543192342
+		},
+		"Puerto Rico": {
+			"permit": 17620,
+			"id": "72",
+			"pop": "3725789",
+			"permitperperson": 0.004729199640666715,
+			"hunting": "4749",
+			"huntingperperson": 0.0012746293469651662
+		},
+		"Rhode Island": {
+			"permit": 22989,
+			"id": "44",
+			"pop": "1052567",
+			"permitperperson": 0.021840889938597733,
+			"hunting": "9025",
+			"huntingperperson": 0.008574276031834553
+		},
+		"South Carolina": {
+			"permit": 198999,
+			"id": "45",
+			"pop": "4625364",
+			"permitperperson": 0.04302342475100338,
+			"hunting": "428526",
+			"huntingperperson": 0.09264697870264914
+		},
+		"South Dakota": {
+			"permit": 87331,
+			"id": "46",
+			"pop": "814180",
+			"permitperperson": 0.10726252180107593,
+			"hunting": "414924",
+			"huntingperperson": 0.509621950919944
+		},
+		"Tennessee": {
+			"permit": 482638,
+			"id": "47",
+			"pop": "6346105",
+			"permitperperson": 0.07605263385966668,
+			"hunting": "720420",
+			"huntingperperson": 0.11352160104505046
+		},
+		"Texas": {
+			"permit": 1178231,
+			"id": "48",
+			"pop": "25145561",
+			"permitperperson": 0.046856421298375486,
+			"hunting": "1450212",
+			"huntingperperson": 0.057672684256278875
+		},
+		"Utah": {
+			"permit": 92709,
+			"id": "49",
+			"pop": "2763885",
+			"permitperperson": 0.03354300197005302,
+			"hunting": "370250",
+			"huntingperperson": 0.13395998748138943
+		},
+		"Vermont": {
+			"permit": 34402,
+			"id": "50",
+			"pop": "625741",
+			"permitperperson": 0.05497801806178595,
+			"hunting": "172351",
+			"huntingperperson": 0.27543504421158277
+		},
+		"Virginia": {
+			"permit": 449963,
+			"id": "51",
+			"pop": "8001024",
+			"permitperperson": 0.056238176513406284,
+			"hunting": "818851",
+			"huntingperperson": 0.10234327506079222
+		},
+		"Washington": {
+			"permit": 340502,
+			"id": "53",
+			"pop": "6724540",
+			"permitperperson": 0.050635731217302596,
+			"hunting": "666678",
+			"huntingperperson": 0.09914105648862227
+		},
+		"West Virginia": {
+			"permit": 193950,
+			"id": "54",
+			"pop": "1852994",
+			"permitperperson": 0.10466844469005296,
+			"hunting": "684738",
+			"huntingperperson": 0.36953060830202367
+		},
+		"Wisconsin": {
+			"permit": 298172,
+			"id": "55",
+			"pop": "5686986",
+			"permitperperson": 0.052430584495899935,
+			"hunting": "2880270",
+			"huntingperperson": 0.5064668701487923
+		},
+		"Wyoming": {
+			"permit": 56199,
+			"id": "56",
+			"pop": "563626",
+			"permitperperson": 0.09970973659838261,
+			"hunting": "264957",
+			"huntingperperson": 0.47009364365731887
+		}
+	},
+	"2015": {
+		"Alabama": {
+			"permit": 483347,
+			"id": "01",
+			"pop": "4779736",
+			"permitperperson": 0.10112420434936155,
+			"hunting": "599876",
+			"huntingperperson": 0.12550400273153162
+		},
+		"Alaska": {
+			"permit": 85279,
+			"id": "02",
+			"pop": "710231",
+			"permitperperson": 0.12007220186108464,
+			"hunting": "310644",
+			"huntingperperson": 0.4373844566063717
+		},
+		"Arizona": {
+			"permit": 279293,
+			"id": "04",
+			"pop": "6392017",
+			"permitperperson": 0.04369403272863636,
+			"hunting": "422136",
+			"huntingperperson": 0.06604112598574127
+		},
+		"Arkansas": {
+			"permit": 185033,
+			"id": "05",
+			"pop": "2915918",
+			"permitperperson": 0.0634561740076367,
+			"hunting": "498919",
+			"huntingperperson": 0.1711018622608729
+		},
+		"California": {
+			"permit": 903038,
+			"id": "06",
+			"pop": "37253956",
+			"permitperperson": 0.024240056545941052,
+			"hunting": "847348",
+			"huntingperperson": 0.022745181746604306
+		},
+		"Colorado": {
+			"permit": 442736,
+			"id": "08",
+			"pop": "5029196",
+			"permitperperson": 0.08803315679086678,
+			"hunting": "530736",
+			"huntingperperson": 0.10553098348125625
+		},
+		"Connecticut": {
+			"permit": 189038,
+			"id": "09",
+			"pop": "3574097",
+			"permitperperson": 0.05289112186938407,
+			"hunting": "128666",
+			"huntingperperson": 0.03599958255190052
+		},
+		"Delaware": {
+			"permit": 49217,
+			"id": "10",
+			"pop": "897934",
+			"permitperperson": 0.05481137811910452,
+			"hunting": "57060",
+			"huntingperperson": 0.06354587308198598
+		},
+		"District of Columbia": {
+			"permit": 775,
+			"id": "11",
+			"pop": "601723",
+			"permitperperson": 0.0012879680517447396,
+			"hunting": 0,
+			"huntingperperson": 0.0
+		},
+		"Florida": {
+			"permit": 977497,
+			"id": "12",
+			"pop": "18801310",
+			"permitperperson": 0.051990898506540234,
+			"hunting": "380398",
+			"huntingperperson": 0.020232526350557486
+		},
+		"Georgia": {
+			"permit": 362503,
+			"id": "13",
+			"pop": "9687653",
+			"permitperperson": 0.03741907353618054,
+			"hunting": "1058503",
+			"huntingperperson": 0.1092631001543924
+		},
+		"Hawaii": {
+			"permit": 0,
+			"id": "15",
+			"pop": "1360301",
+			"permitperperson": 0.0,
+			"hunting": "11486",
+			"huntingperperson": 0.00844371944150596
+		},
+		"Idaho": {
+			"permit": 106129,
+			"id": "16",
+			"pop": "1567582",
+			"permitperperson": 0.06770235943000111,
+			"hunting": "1029816",
+			"huntingperperson": 0.6569455377772901
+		},
+		"Illinois": {
+			"permit": 458884,
+			"id": "17",
+			"pop": "12830632",
+			"permitperperson": 0.03576472304715777,
+			"hunting": "1440993",
+			"huntingperperson": 0.1123088091062077
+		},
+		"Indiana": {
+			"permit": 466167,
+			"id": "18",
+			"pop": "6483802",
+			"permitperperson": 0.0718971677420131,
+			"hunting": "423318",
+			"huntingperperson": 0.06528854520850574
+		},
+		"Iowa": {
+			"permit": 40684,
+			"id": "19",
+			"pop": "3046355",
+			"permitperperson": 0.01335497668525172,
+			"hunting": "841793",
+			"huntingperperson": 0.2763279394555132
+		},
+		"Kansas": {
+			"permit": 169157,
+			"id": "20",
+			"pop": "2853118",
+			"permitperperson": 0.05928846966722021,
+			"hunting": "493665",
+			"huntingperperson": 0.17302649241987186
+		},
+		"Kentucky": {
+			"permit": 276154,
+			"id": "21",
+			"pop": "4339367",
+			"permitperperson": 0.0636392358608986,
+			"hunting": "594389",
+			"huntingperperson": 0.13697596907567394
+		},
+		"Louisiana": {
+			"permit": 350405,
+			"id": "22",
+			"pop": "4533372",
+			"permitperperson": 0.0772945613110947,
+			"hunting": "659165",
+			"huntingperperson": 0.1454028039172607
+		},
+		"Maine": {
+			"permit": 96107,
+			"id": "23",
+			"pop": "1328361",
+			"permitperperson": 0.07235006146672478,
+			"hunting": "253477",
+			"huntingperperson": 0.19081936310987752
+		},
+		"Maryland": {
+			"permit": 112731,
+			"id": "24",
+			"pop": "5773552",
+			"permitperperson": 0.01952541520367358,
+			"hunting": "339319",
+			"huntingperperson": 0.05877127286633947
+		},
+		"Massachusetts": {
+			"permit": 113735,
+			"id": "25",
+			"pop": "6547629",
+			"permitperperson": 0.017370409960613224,
+			"hunting": "246509",
+			"huntingperperson": 0.0376485900468704
+		},
+		"Michigan": {
+			"permit": 300219,
+			"id": "26",
+			"pop": "9883640",
+			"permitperperson": 0.030375347544022244,
+			"hunting": "1896927",
+			"huntingperperson": 0.19192595035836998
+		},
+		"Minnesota": {
+			"permit": 279939,
+			"id": "27",
+			"pop": "5303925",
+			"permitperperson": 0.052779592471613006,
+			"hunting": "1571600",
+			"huntingperperson": 0.2963088656042459
+		},
+		"Mississippi": {
+			"permit": 229565,
+			"id": "28",
+			"pop": "2967297",
+			"permitperperson": 0.07736502277999135,
+			"hunting": "418042",
+			"huntingperperson": 0.14088310000650422
+		},
+		"Missouri": {
+			"permit": 508639,
+			"id": "29",
+			"pop": "5988927",
+			"permitperperson": 0.08492990480598611,
+			"hunting": "1831083",
+			"huntingperperson": 0.30574475193970474
+		},
+		"Montana": {
+			"permit": 108058,
+			"id": "30",
+			"pop": "989415",
+			"permitperperson": 0.1092140305129799,
+			"hunting": "965823",
+			"huntingperperson": 0.9761556071011659
+		},
+		"Nebraska": {
+			"permit": 31819,
+			"id": "31",
+			"pop": "1826341",
+			"permitperperson": 0.01742226670703883,
+			"hunting": "419950",
+			"huntingperperson": 0.22994062992617478
+		},
+		"Nevada": {
+			"permit": 106653,
+			"id": "32",
+			"pop": "2700551",
+			"permitperperson": 0.03949305160317283,
+			"hunting": "143889",
+			"huntingperperson": 0.05328134888028406
+		},
+		"New Hampshire": {
+			"permit": 102611,
+			"id": "33",
+			"pop": "1316470",
+			"permitperperson": 0.07794404733871642,
+			"hunting": "212046",
+			"huntingperperson": 0.16107165374068533
+		},
+		"New Jersey": {
+			"permit": 97215,
+			"id": "34",
+			"pop": "8791894",
+			"permitperperson": 0.011057344412933094,
+			"hunting": "353652",
+			"huntingperperson": 0.04022477978010199
+		},
+		"New Mexico": {
+			"permit": 136719,
+			"id": "35",
+			"pop": "2059179",
+			"permitperperson": 0.06639490787347774,
+			"hunting": "302504",
+			"huntingperperson": 0.14690515006223354
+		},
+		"New York": {
+			"permit": 324519,
+			"id": "36",
+			"pop": "19378102",
+			"permitperperson": 0.016746686543398316,
+			"hunting": "1114904",
+			"huntingperperson": 0.05753422084371318
+		},
+		"North Carolina": {
+			"permit": 205990,
+			"id": "37",
+			"pop": "9535483",
+			"permitperperson": 0.02160247152661276,
+			"hunting": "347452",
+			"huntingperperson": 0.03643779764485973
+		},
+		"North Dakota": {
+			"permit": 65423,
+			"id": "38",
+			"pop": "672591",
+			"permitperperson": 0.09727010917481799,
+			"hunting": "549909",
+			"huntingperperson": 0.8175979161184137
+		},
+		"Ohio": {
+			"permit": 680049,
+			"id": "39",
+			"pop": "11536504",
+			"permitperperson": 0.05894758065354981,
+			"hunting": "1151515",
+			"huntingperperson": 0.09981490059726933
+		},
+		"Oklahoma": {
+			"permit": 344032,
+			"id": "40",
+			"pop": "3751351",
+			"permitperperson": 0.0917088270332475,
+			"hunting": "311776",
+			"huntingperperson": 0.08311032478699007
+		},
+		"Oregon": {
+			"permit": 303122,
+			"id": "41",
+			"pop": "3831074",
+			"permitperperson": 0.07912193813014314,
+			"hunting": "1291430",
+			"huntingperperson": 0.3370934625642835
+		},
+		"Pennsylvania": {
+			"permit": 791331,
+			"id": "42",
+			"pop": "12702379",
+			"permitperperson": 0.06229785774774946,
+			"hunting": "2642943",
+			"huntingperperson": 0.20806677237389942
+		},
+		"Puerto Rico": {
+			"permit": 17288,
+			"id": "72",
+			"pop": "3725789",
+			"permitperperson": 0.004640090998175151,
+			"hunting": "10211",
+			"huntingperperson": 0.0027406275556667325
+		},
+		"Rhode Island": {
+			"permit": 24759,
+			"id": "44",
+			"pop": "1052567",
+			"permitperperson": 0.02352249310495199,
+			"hunting": "33872",
+			"huntingperperson": 0.032180374265961216
+		},
+		"South Carolina": {
+			"permit": 236338,
+			"id": "45",
+			"pop": "4625364",
+			"permitperperson": 0.05109608670798666,
+			"hunting": "423437",
+			"huntingperperson": 0.09154674097000798
+		},
+		"South Dakota": {
+			"permit": 94817,
+			"id": "46",
+			"pop": "814180",
+			"permitperperson": 0.11645704880984549,
+			"hunting": "402372",
+			"huntingperperson": 0.4942052126065489
+		},
+		"Tennessee": {
+			"permit": 575526,
+			"id": "47",
+			"pop": "6346105",
+			"permitperperson": 0.09068964348998322,
+			"hunting": "757359",
+			"huntingperperson": 0.11934233675616776
+		},
+		"Texas": {
+			"permit": 1277999,
+			"id": "48",
+			"pop": "25145561",
+			"permitperperson": 0.050824040076099315,
+			"hunting": "1537431",
+			"huntingperperson": 0.061141248747641784
+		},
+		"Utah": {
+			"permit": 104439,
+			"id": "49",
+			"pop": "2763885",
+			"permitperperson": 0.0377870280420495,
+			"hunting": "367527",
+			"huntingperperson": 0.13297478006501717
+		},
+		"Vermont": {
+			"permit": 37756,
+			"id": "50",
+			"pop": "625741",
+			"permitperperson": 0.06033806319227923,
+			"hunting": "183780",
+			"huntingperperson": 0.2936997895295338
+		},
+		"Virginia": {
+			"permit": 490760,
+			"id": "51",
+			"pop": "8001024",
+			"permitperperson": 0.06133714884494785,
+			"hunting": "830192",
+			"huntingperperson": 0.10376071862801561
+		},
+		"Washington": {
+			"permit": 358161,
+			"id": "53",
+			"pop": "6724540",
+			"permitperperson": 0.05326178444919653,
+			"hunting": "676025",
+			"huntingperperson": 0.10053104004140061
+		},
+		"West Virginia": {
+			"permit": 202887,
+			"id": "54",
+			"pop": "1852994",
+			"permitperperson": 0.10949145005326515,
+			"hunting": "704055",
+			"huntingperperson": 0.3799553587329479
+		},
+		"Wisconsin": {
+			"permit": 336019,
+			"id": "55",
+			"pop": "5686986",
+			"permitperperson": 0.05908560351652,
+			"hunting": "2968341",
+			"huntingperperson": 0.5219532807008844
+		},
+		"Wyoming": {
+			"permit": 56055,
+			"id": "56",
+			"pop": "563626",
+			"permitperperson": 0.09945424802972183,
+			"hunting": "261991",
+			"huntingperperson": 0.4648312888333753
+		}
+	},
+	"2016": {
+		"Alabama": {
+			"permit": 315679,
+			"id": "01",
+			"pop": "4779736",
+			"permitperperson": 0.06604527948823952,
+			"hunting": "604043",
+			"huntingperperson": 0.126375808203633
+		},
+		"Alaska": {
+			"permit": 86443,
+			"id": "02",
+			"pop": "710231",
+			"permitperperson": 0.12171110526011959,
+			"hunting": "362739",
+			"huntingperperson": 0.5107338316688514
+		},
+		"Arizona": {
+			"permit": 319160,
+			"id": "04",
+			"pop": "6392017",
+			"permitperperson": 0.049931031159648046,
+			"hunting": "446402",
+			"huntingperperson": 0.06983742377406067
+		},
+		"Arkansas": {
+			"permit": 187395,
+			"id": "05",
+			"pop": "2915918",
+			"permitperperson": 0.0642662105038619,
+			"hunting": "521098",
+			"huntingperperson": 0.1787080432302966
+		},
+		"California": {
+			"permit": 1226389,
+			"id": "06",
+			"pop": "37253956",
+			"permitperperson": 0.03291969851470271,
+			"hunting": "1035351",
+			"huntingperperson": 0.02779170620161789
+		},
+		"Colorado": {
+			"permit": 493361,
+			"id": "08",
+			"pop": "5029196",
+			"permitperperson": 0.0980993781113323,
+			"hunting": "545216",
+			"huntingperperson": 0.10841017132758397
+		},
+		"Connecticut": {
+			"permit": 182802,
+			"id": "09",
+			"pop": "3574097",
+			"permitperperson": 0.05114634549649884,
+			"hunting": "131331",
+			"huntingperperson": 0.03674522543736222
+		},
+		"Delaware": {
+			"permit": 54116,
+			"id": "10",
+			"pop": "897934",
+			"permitperperson": 0.0602672356765642,
+			"hunting": "58299",
+			"huntingperperson": 0.06492570723460744
+		},
+		"District of Columbia": {
+			"permit": 806,
+			"id": "11",
+			"pop": "601723",
+			"permitperperson": 0.0013394867738145294,
+			"hunting": 0,
+			"huntingperperson": 0.0
+		},
+		"Florida": {
+			"permit": 1126673,
+			"id": "12",
+			"pop": "18801310",
+			"permitperperson": 0.05992523925194574,
+			"hunting": "353926",
+			"huntingperperson": 0.01882453935390672
+		},
+		"Georgia": {
+			"permit": 370335,
+			"id": "13",
+			"pop": "9687653",
+			"permitperperson": 0.038227525283987776,
+			"hunting": "1456426",
+			"huntingperperson": 0.1503383740107124
+		},
+		"Hawaii": {
+			"permit": 0,
+			"id": "15",
+			"pop": "1360301",
+			"permitperperson": 0.0,
+			"hunting": "12202",
+			"huntingperperson": 0.008970073535195518
+		},
+		"Idaho": {
+			"permit": 117132,
+			"id": "16",
+			"pop": "1567582",
+			"permitperperson": 0.07472144997837434,
+			"hunting": "1081968",
+			"huntingperperson": 0.6902146107827214
+		},
+		"Illinois": {
+			"permit": 606894,
+			"id": "17",
+			"pop": "12830632",
+			"permitperperson": 0.047300397985071976,
+			"hunting": "1563709",
+			"huntingperperson": 0.12187310804331385
+		},
+		"Indiana": {
+			"permit": 519098,
+			"id": "18",
+			"pop": "6483802",
+			"permitperperson": 0.08006074213864026,
+			"hunting": "426349",
+			"huntingperperson": 0.06575601784261766
+		},
+		"Iowa": {
+			"permit": 41983,
+			"id": "19",
+			"pop": "3046355",
+			"permitperperson": 0.01378138792097441,
+			"hunting": "601508",
+			"huntingperperson": 0.19745170868135853
+		},
+		"Kansas": {
+			"permit": 178888,
+			"id": "20",
+			"pop": "2853118",
+			"permitperperson": 0.0626991242563399,
+			"hunting": "520232",
+			"huntingperperson": 0.18233805962459315
+		},
+		"Kentucky": {
+			"permit": 288606,
+			"id": "21",
+			"pop": "4339367",
+			"permitperperson": 0.06650877881497462,
+			"hunting": "617129",
+			"huntingperperson": 0.1422163647370688
+		},
+		"Louisiana": {
+			"permit": 358993,
+			"id": "22",
+			"pop": "4533372",
+			"permitperperson": 0.0791889569177204,
+			"hunting": "677582",
+			"huntingperperson": 0.14946534279560555
+		},
+		"Maine": {
+			"permit": 110099,
+			"id": "23",
+			"pop": "1328361",
+			"permitperperson": 0.08288334270578555,
+			"hunting": "259854",
+			"huntingperperson": 0.19562001594446088
+		},
+		"Maryland": {
+			"permit": 137285,
+			"id": "24",
+			"pop": "5773552",
+			"permitperperson": 0.02377825643555302,
+			"hunting": "129376",
+			"huntingperperson": 0.022408389151080652
+		},
+		"Massachusetts": {
+			"permit": 134654,
+			"id": "25",
+			"pop": "6547629",
+			"permitperperson": 0.02056530692255166,
+			"hunting": "253725",
+			"huntingperperson": 0.038750668371711344
+		},
+		"Michigan": {
+			"permit": 328987,
+			"id": "26",
+			"pop": "9883640",
+			"permitperperson": 0.03328601608314346,
+			"hunting": "1884724",
+			"huntingperperson": 0.1906912837780413
+		},
+		"Minnesota": {
+			"permit": 315344,
+			"id": "27",
+			"pop": "5303925",
+			"permitperperson": 0.05945483769095528,
+			"hunting": "1486362",
+			"huntingperperson": 0.2802381255391055
+		},
+		"Mississippi": {
+			"permit": 243579,
+			"id": "28",
+			"pop": "2967297",
+			"permitperperson": 0.0820878395388126,
+			"hunting": "433090",
+			"huntingperperson": 0.14595438205208308
+		},
+		"Missouri": {
+			"permit": 550708,
+			"id": "29",
+			"pop": "5988927",
+			"permitperperson": 0.09195436845364788,
+			"hunting": "1827753",
+			"huntingperperson": 0.3051887257934518
+		},
+		"Montana": {
+			"permit": 109168,
+			"id": "30",
+			"pop": "989415",
+			"permitperperson": 0.11033590556035637,
+			"hunting": "990082",
+			"huntingperperson": 1.0006741357266669
+		},
+		"Nebraska": {
+			"permit": 31191,
+			"id": "31",
+			"pop": "1826341",
+			"permitperperson": 0.017078409782181968,
+			"hunting": "417689",
+			"huntingperperson": 0.2287026354881153
+		},
+		"Nevada": {
+			"permit": 122128,
+			"id": "32",
+			"pop": "2700551",
+			"permitperperson": 0.04522336367652379,
+			"hunting": "146631",
+			"huntingperperson": 0.05429669722956537
+		},
+		"New Hampshire": {
+			"permit": 124635,
+			"id": "33",
+			"pop": "1316470",
+			"permitperperson": 0.09467363479608347,
+			"hunting": "219741",
+			"huntingperperson": 0.16691683061520582
+		},
+		"New Jersey": {
+			"permit": 131277,
+			"id": "34",
+			"pop": "8791894",
+			"permitperperson": 0.014931594944161065,
+			"hunting": "366625",
+			"huntingperperson": 0.04170034352097512
+		},
+		"New Mexico": {
+			"permit": 145066,
+			"id": "35",
+			"pop": "2059179",
+			"permitperperson": 0.0704484651407187,
+			"hunting": "353760",
+			"huntingperperson": 0.17179662380006788
+		},
+		"New York": {
+			"permit": 368977,
+			"id": "36",
+			"pop": "19378102",
+			"permitperperson": 0.01904092567992469,
+			"hunting": "1071806",
+			"huntingperperson": 0.05531016401915936
+		},
+		"North Carolina": {
+			"permit": 218485,
+			"id": "37",
+			"pop": "9535483",
+			"permitperperson": 0.022912840387844014,
+			"hunting": "363336",
+			"huntingperperson": 0.03810357587549577
+		},
+		"North Dakota": {
+			"permit": 61325,
+			"id": "38",
+			"pop": "672591",
+			"permitperperson": 0.09117725333821,
+			"hunting": "543500",
+			"huntingperperson": 0.8080690939962027
+		},
+		"Ohio": {
+			"permit": 735046,
+			"id": "39",
+			"pop": "11536504",
+			"permitperperson": 0.0637147960942067,
+			"hunting": "1098675",
+			"huntingperperson": 0.09523465687698804
+		},
+		"Oklahoma": {
+			"permit": 347681,
+			"id": "40",
+			"pop": "3751351",
+			"permitperperson": 0.09268154326268056,
+			"hunting": "312573",
+			"huntingperperson": 0.08332278157922306
+		},
+		"Oregon": {
+			"permit": 353917,
+			"id": "41",
+			"pop": "3831074",
+			"permitperperson": 0.09238062224848698,
+			"hunting": "1253956",
+			"huntingperperson": 0.32731187129248873
+		},
+		"Pennsylvania": {
+			"permit": 880403,
+			"id": "42",
+			"pop": "12702379",
+			"permitperperson": 0.06931008750408092,
+			"hunting": "2664373",
+			"huntingperperson": 0.20975385791905596
+		},
+		"Puerto Rico": {
+			"permit": 17257,
+			"id": "72",
+			"pop": "3725789",
+			"permitperperson": 0.004631770612882264,
+			"hunting": "4143",
+			"huntingperperson": 0.001111979234465505
+		},
+		"Rhode Island": {
+			"permit": 30904,
+			"id": "44",
+			"pop": "1052567",
+			"permitperperson": 0.02936060127288809,
+			"hunting": "8978",
+			"huntingperperson": 0.008529623292388988
+		},
+		"South Carolina": {
+			"permit": 250849,
+			"id": "45",
+			"pop": "4625364",
+			"permitperperson": 0.05423335331013948,
+			"hunting": "434043",
+			"huntingperperson": 0.09383974969321333
+		},
+		"South Dakota": {
+			"permit": 99007,
+			"id": "46",
+			"pop": "814180",
+			"permitperperson": 0.12160333095875604,
+			"hunting": "400704",
+			"huntingperperson": 0.4921565255840232
+		},
+		"Tennessee": {
+			"permit": 604443,
+			"id": "47",
+			"pop": "6346105",
+			"permitperperson": 0.09524629674422343,
+			"hunting": "785761",
+			"huntingperperson": 0.12381783787063089
+		},
+		"Texas": {
+			"permit": 1297193,
+			"id": "48",
+			"pop": "25145561",
+			"permitperperson": 0.051587355716581546,
+			"hunting": "1611342",
+			"huntingperperson": 0.06408057469865158
+		},
+		"Utah": {
+			"permit": 114064,
+			"id": "49",
+			"pop": "2763885",
+			"permitperperson": 0.04126944500223417,
+			"hunting": "386403",
+			"huntingperperson": 0.1398042972120765
+		},
+		"Vermont": {
+			"permit": 42656,
+			"id": "50",
+			"pop": "625741",
+			"permitperperson": 0.06816877909550437,
+			"hunting": "178743",
+			"huntingperperson": 0.2856501332020756
+		},
+		"Virginia": {
+			"permit": 556528,
+			"id": "51",
+			"pop": "8001024",
+			"permitperperson": 0.06955709669162347,
+			"hunting": "843423",
+			"huntingperperson": 0.10541438195910924
+		},
+		"Washington": {
+			"permit": 417698,
+			"id": "53",
+			"pop": "6724540",
+			"permitperperson": 0.062115475556692355,
+			"hunting": "674196",
+			"huntingperperson": 0.10025905117673477
+		},
+		"West Virginia": {
+			"permit": 201111,
+			"id": "54",
+			"pop": "1852994",
+			"permitperperson": 0.1085330011861884,
+			"hunting": "719105",
+			"huntingperperson": 0.3880773494139754
+		},
+		"Wisconsin": {
+			"permit": 381733,
+			"id": "55",
+			"pop": "5686986",
+			"permitperperson": 0.06712395634524157,
+			"hunting": "2941239",
+			"huntingperperson": 0.5171876632015623
+		},
+		"Wyoming": {
+			"permit": 55806,
+			"id": "56",
+			"pop": "563626",
+			"permitperperson": 0.09901246571307924,
+			"hunting": "249478",
+			"huntingperperson": 0.4426303967524564
+		}
+	}
+}
