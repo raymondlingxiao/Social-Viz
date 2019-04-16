@@ -145,7 +145,8 @@ function choose(year){
                     // scaled betweeen 4,14
                     'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min_fa],dif_fa],15],4] ,
                     // 'circle-radius':['get','fatalities'],
-                    'circle-color': "#ff3161"
+                    'circle-color': "#ff3161",
+                    'circle-opacity': 0.7
                 }
             });
         });
