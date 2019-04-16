@@ -13,6 +13,9 @@ with open(state_file) as f:
     headers = next(reader)
 
     for row in reader:
-        print([float(row[2]), float(row[1])])
+        rst[row[3]] = [float(row[2]), float(row[1])]
+
+with open(output_file, 'w') as f:
+    json.dump(rst, f)
 
 
