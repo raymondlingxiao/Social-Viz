@@ -11,7 +11,6 @@ function mass_shooting_controller() {
     }
     else
         map.setLayoutProperty('mass_shooting','visibility','visible');
-
 }
 
 function choose(year){
@@ -74,7 +73,7 @@ function choose(year){
                 filter: exp_mass_shooting,
                 paint:{
                     // scaled betweeen 4,14
-                    'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min],dif],10],4] ,
+                    'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min],dif],18],4] ,
                     'circle-color': "#ff3161"
                 }
             });
