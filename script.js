@@ -9,6 +9,29 @@ mapdiv.appendChild(button);
 // global map
 let map = null;
 
+// points controller
+
+function police_controller() {
+    if (map.getLayoutProperty('gunfire_points','visibility') === 'visible'){
+        map.setLayoutProperty('gunfire_points','visibility','none');
+    }
+    else
+        map.setLayoutProperty('gunfire_points','visibility','visible');
+
+    if (map.getLayoutProperty('other_points','visibility') === 'visible'){
+        map.setLayoutProperty('other_points','visibility','none');
+    }
+    else
+        map.setLayoutProperty('other_points','visibility','visible');
+}
+// mass shooting controller
+function mass_shooting_controller() {
+    if (map.getLayoutProperty('mass_shooting','visibility') === 'visible'){
+        map.setLayoutProperty('mass_shooting','visibility','none');
+    }
+    else
+        map.setLayoutProperty('mass_shooting','visibility','visible');
+}
 
 // entry
 choose(2012);
@@ -31,7 +54,7 @@ function choose(year){
     mapboxgl.accessToken = 'pk.eyJ1IjoicmF5bW9uZGx4IiwiYSI6ImNqc3RpZ3R6NjI0NDIzeXBkNDlucW81MXEifQ.VThJpKXtsJZEQhScbEiItw';
      map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v9',
+        style: 'mapbox://styles/mapbox/streets-v11',
         center: [-99.9, 41.5],
         zoom:3
     });
@@ -54,6 +77,15 @@ function choose(year){
         return data;
     }
 
+    async function fetchMass(){
+
+        let response = await fetch("https://api.myjson.com/bins/1aoe6w");
+
+        let data = await response.json();
+
+        return data;
+    }
+
 // set legend range
 
     function getColor(number){
@@ -65,6 +97,111 @@ function choose(year){
                             number > 100000   ? 'rgb(132, 131, 130)' :
                                 'rgb(152, 151, 150)';
     }
+
+
+
+    //--------------new section mass shooting ------------------------
+    let data = fetchMass();
+
+    data.then(function (ele) {
+        let cur = ele[year.toString()];
+        let min_fa = Number.MAX_VALUE;
+        let max_fa = Number.MIN_VALUE;
+
+        for (let s in cur){
+            if (cur.hasOwnProperty(s)){
+                let cur_fa = parseInt(cur[s].Fatalities);
+                if (cur_fa < min_fa){
+                    min_fa = cur_fa;
+                }
+                if (cur_fa > max_fa){
+                    max_fa = cur_fa;
+                }
+            }
+        }
+
+        let dif_fa = max_fa-min_fa;
+
+
+        // get min max per year
+        let exp_mass_shooting = [
+            "all",
+            ["==",'date',parseInt(year)]
+        ];
+
+        console.log(dif_fa,min_fa,max_fa)
+
+        map.on('load',function () {
+            map.addLayer({
+                id: 'mass_shooting',
+                type: 'circle',
+                source: {
+                    type: 'vector',
+                    url: 'mapbox://raymondlx.5tgwg8tn'
+                },
+                'source-layer': 'mass_shooting_data-2gox7n',
+                filter: exp_mass_shooting,
+                paint:{
+                    // scaled betweeen 4,14
+                    'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min_fa],dif_fa],15],4] ,
+                    // 'circle-radius':['get','fatalities'],
+                    'circle-color': "#ff3161"
+                }
+            });
+        });
+    })
+
+
+// create pop up
+    map.on('click', function (e) {
+        let features = map.queryRenderedFeatures(e.point);
+        let clicked = null;
+
+        features.forEach(function (feature) {
+            if (feature.layer.id === 'mass_shooting')
+                clicked = feature;
+        })
+
+        if(clicked === null)
+            return;
+
+        let coordinates = clicked.geometry.coordinates.slice();
+        let cases = clicked.properties.case;
+        let death = clicked.properties.fatalities;
+        let legality = clicked.properties.weapons_obtained_legally;
+
+        let description = "";
+        description += "<strong>Case:</strong> " + cases + "<" + "br" + ">";
+        description += "<strong>Fatalities:</strong> " + death + "<" + "br" + ">";
+        description += "<strong>Weapon Legality:</strong> " + legality + "<" + "br" + ">";
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+
+        console.log(clicked)
+
+
+    });
+
+// Change the cursor to a pointer when the mouse is over the layer.
+    map.on('mouseenter', 'mass_shooting', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+// Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'mass_shooting', function () {
+        map.getCanvas().style.cursor = '';
+    });
+    //-----------------------------------------------------------------
 
     local = fetchAsync();
 
