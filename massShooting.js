@@ -3,7 +3,7 @@
 
 let map = null;
 
-choose("2018");
+choose("2016");
 
 function mass_shooting_controller() {
     if (map.getLayoutProperty('mass_shooting','visibility') === 'visible'){
@@ -24,31 +24,63 @@ function choose(year){
         zoom:3
     });
 
-    let exp_mass_shooting = [
-        "all",
-        ["==",'date',parseInt(year)]
-    ];
+    // get data from URL
+    async function fetchAsync(){
 
-    map.on('load',function () {
-        map.addLayer({
-            id: 'mass_shooting',
-            type: 'circle',
-            source: {
-                type: 'vector',
-                url: 'mapbox://raymondlx.5tgwg8tn'
-            },
-            'source-layer': 'mass_shooting_data-2gox7n',
-            filter: exp_mass_shooting,
-            paint:{
-                // may need to scale
-                'circle-radius': ['get','fatalities'] ,
-                'circle-color': "#ff3161"
+        let response = await fetch("https://api.myjson.com/bins/1aoe6w");
+
+        let data = await response.json();
+
+        return data;
+    }
+
+    let data = fetchAsync();
+
+    data.then(function (ele) {
+        let cur = ele[year.toString()];
+        let min = Number.MAX_VALUE;
+        let max = Number.MIN_VALUE;
+
+        for (let s in cur){
+            if (cur.hasOwnProperty(s)){
+                let cur_fa = parseInt(cur[s].Fatalities);
+                if (cur_fa < min){
+                    min = cur_fa;
+                }
+                if (cur_fa > max){
+                    max = cur_fa;
+                }
             }
+        }
+
+        let dif = max-min;
+
+
+        // get min max per year
+        let exp_mass_shooting = [
+            "all",
+            ["==",'date',parseInt(year)]
+        ];
+
+        map.on('load',function () {
+            map.addLayer({
+                id: 'mass_shooting',
+                type: 'circle',
+                source: {
+                    type: 'vector',
+                    url: 'mapbox://raymondlx.5tgwg8tn'
+                },
+                'source-layer': 'mass_shooting_data-2gox7n',
+                filter: exp_mass_shooting,
+                paint:{
+                    // scaled betweeen 4,14
+                    'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min],dif],10],4] ,
+                    'circle-color': "#ff3161"
+                }
+            });
         });
+    })
 
-
-
-    });
 
 // create pop up
     map.on('click', function (e) {
