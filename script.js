@@ -93,10 +93,7 @@ function police_controller() {
         flag_3 = 0;
         filter_button_3.style.backgroundColor = "white";
     }
-    if (map.getLayoutProperty('gunfire_points', 'visibility') === 'visible') {
-        map.setLayoutProperty('gunfire_points', 'visibility', 'none');
-    } else
-        map.setLayoutProperty('gunfire_points', 'visibility', 'visible');
+
     if (map.getLayoutProperty('gunfire_points','visibility') === 'visible'){
         map.setLayoutProperty('gunfire_points','visibility','none');
         policeStatus = false;
