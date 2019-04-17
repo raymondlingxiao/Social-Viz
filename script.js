@@ -64,29 +64,45 @@ const stateData = {
 
 // global map
 let map = null;
+//global var
+
+let policeStatus = false;
+let massStatus = false;
+let huntStatus = false;
+
 
 // points controller
 
 function police_controller() {
     if (map.getLayoutProperty('gunfire_points','visibility') === 'visible'){
         map.setLayoutProperty('gunfire_points','visibility','none');
+        policeStatus = false;
     }
-    else
+    else{
         map.setLayoutProperty('gunfire_points','visibility','visible');
+        policeStatus = true;
+    }
 
     if (map.getLayoutProperty('other_points','visibility') === 'visible'){
         map.setLayoutProperty('other_points','visibility','none');
+        policeStatus = false;
+
     }
-    else
+    else{
         map.setLayoutProperty('other_points','visibility','visible');
+        policeStatus = true;
+    }
 }
 // mass shooting controller
 function mass_shooting_controller() {
     if (map.getLayoutProperty('mass_shooting','visibility') === 'visible'){
         map.setLayoutProperty('mass_shooting','visibility','none');
+        massStatus = false;
     }
-    else
+    else{
         map.setLayoutProperty('mass_shooting','visibility','visible');
+        massStatus = true;
+    }
 }
 
 // entry
@@ -108,9 +124,13 @@ function gun_sale_controller() {
 function hunting_controller() {
     if (map.getLayoutProperty('hunting_bars','visibility') === 'visible'){
         map.setLayoutProperty('hunting_bars','visibility','none');
+        huntStatus = false;
     }
-    else
+    else{
         map.setLayoutProperty('hunting_bars','visibility','visible');
+        huntStatus = true;
+    }
+
 }
 
 
@@ -212,6 +232,9 @@ function choose(year){
                 },
                 'source-layer': 'mass_shooting_data-2gox7n',
                 filter: exp_mass_shooting,
+                layout:{
+                    visibility: massStatus?'visible':'none'
+                },
                 paint:{
                     // scaled betweeen 4,14
                     'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min_fa],dif_fa],15],4] ,
@@ -378,7 +401,8 @@ function choose(year){
                     },
                     "layout": {
                         "icon-image": "{icon}",
-                        "icon-allow-overlap": true
+                        "icon-allow-overlap": true,
+                        visibility: huntStatus?'visible':'none'
                     }
                 });
 
@@ -432,6 +456,9 @@ function choose(year){
                 },
                 'source-layer': 'clean_data_with_location-atsza0',
                 filter:exp_gunfire,
+                layout:{
+                    visibility: policeStatus?'visible':'none'
+                },
                 paint:{
                     'circle-radius': baseRadius,
 
@@ -448,6 +475,9 @@ function choose(year){
                 },
                 'source-layer': 'clean_data_with_location-atsza0',
                 filter:exp_other,
+                layout:{
+                    visibility: policeStatus?'visible':'none'
+                },
                 paint:{
                     'circle-radius': baseRadius,
                     'circle-color': "#F4C77A"
