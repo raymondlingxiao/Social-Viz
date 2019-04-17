@@ -35,20 +35,22 @@
         <div><span style='background-color: #ff3161'></span>Mass Shooting</div>
 
     </div>
+
     <div class='filter'>
         <h4 class="title">Filter</h4>
         <button class="bu" id="bu_mass" onClick="mass_shooting_controller()">Mass Shooting</button>
         <button class="bu" id="bu_gunsales" onClick="gun_sale_controller()">Gun Sales</button>
         <button class="bu" id="bu_police" onClick="police_controller()">Police Officer</button>
-        <button class="bu" id="bu_police" onClick="hunting_controller()">Hunting</button>
-
-        <button class="bu" id="b1" onClick="choose('2012')">2012</button>
-        <button class="bu" id="b2" onClick="choose('2013')">2013</button>
-        <button class="bu" id="b3" onClick="choose('2014')">2014</button>
-        <button class="bu" id="b4" onClick="choose('2015')">2015</button>
-        <button class="bu" id="b5" onClick="choose('2016')">2016</button>
+        <button class="bu" id="bu_hunting" onClick="hunting_controller()">Hunting</button>
 
     </div>
+    <div class="slidecontainer">
+        <h4 id="year">Timeline </h4>
+        <input type="range" min="2012" max="2016" value="50" class="slider" id="myRange">
+        <output id="demo">
+    </div>
+
+
     <script src="script.js"></script>
     <!--<script src="massShooting.js"></script>-->
     <!-- <script src="script_III.js"></script> -->
