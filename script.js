@@ -182,13 +182,13 @@ function choose(year){
 // set legend range
 
     function getColor(number){
-        return number > 1000000 ? 'rgb(32, 31, 30)' :
-            number > 600000 ? 'rgb(52, 51, 50)' :
-                number > 300000  ? 'rgb(72, 71, 70)' :
-                    number > 200000   ? 'rgb(92, 91, 90)' :
-                        number > 150000   ? 'rgb(112, 111, 110)' :
-                            number > 100000   ? 'rgb(132, 131, 130)' :
-                                'rgb(152, 151, 150)';
+        return number > 1000000 ? 'rgb(21, 20, 20)' :
+            number > 600000 ? 'rgb(40, 38, 38)' :
+                number > 300000  ? 'rgb(58, 55, 55)' :
+                    number > 200000   ? 'rgb(84, 79, 79)' :
+                        number > 150000   ? 'rgb(97, 94, 94)' :
+                            number > 100000   ? 'rgb(116, 113, 113)' :
+                                'rgb(133, 130, 130)';
     }
 
 
@@ -309,7 +309,6 @@ function choose(year){
         let data_cur = data[year];
         let data_norm = [];
         let max = 0;
-        let max_location = [];
         let min = Number.MAX_VALUE;
         for (let key in data_cur){
             if (parseInt(data_cur[key]['permit']) > max)
@@ -329,16 +328,13 @@ function choose(year){
             huntingPromise.then(function(huntingData) {
                     
                 const maxHeight = 90;
-                const barWidth = 20;
+                const barWidth = 10;
 
                 const generateBar = (height) => {
                     const channels = 4; 
-                    const maxBlue = 204, minBlue = 94, maxRed = 204, minRed = 89, maxGreen = 152, minGreen = 89;
                     let data = new Uint8Array(barWidth * height * channels);
                     
-                    const r = minRed + (height / maxHeight) * (maxRed - minRed), 
-                            g = maxGreen - (height / maxHeight) * (maxGreen - minGreen), 
-                            b = maxBlue - (height / maxHeight) * (maxBlue - minBlue);
+                    const r = 149, g = 204, b = 124, a = 200;
         
                     for (let x = 0; x < barWidth; x++) {
                         for (let y = height - 1; y >= 0; y--) {
@@ -346,7 +342,7 @@ function choose(year){
                             data[offset + 0] = r; // red
                             data[offset + 1] = g; // green
                             data[offset + 2] = b; // blue
-                            data[offset + 3] = 200; // alpha
+                            data[offset + 3] = a; // alpha
                         }
                     }
                     return data;
