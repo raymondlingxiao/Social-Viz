@@ -6,15 +6,17 @@ button.setAttribute("class", "mapboxgl-ctrl-group");
 button.innerHTML = "3D";
 mapdiv.appendChild(button);
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
+$('.slider').on('input', () => {
+    const val = $('.slider')[0].value;
+    $('.range-labels li').removeClass('active');
+    $('.range-labels').find(`li:nth-child(${(val - 2012 + 1)})`).addClass('active');
+    choose(val);
+});
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function () {
-    output.innerHTML = this.value;
-    choose(this.value)
-}
+$('.range-labels li').on('click', (e) => {
+  const val = e.target.innerHTML;
+  $('.slider').val(val).trigger('input');
+});
 
 // State location data
 const stateData = {
@@ -271,8 +273,6 @@ function choose(year) {
             ["==", 'date', parseInt(year)]
         ];
 
-        console.log(dif_fa, min_fa, max_fa)
-
         map.on('load', function () {
             map.addLayer({
                 id: 'mass_shooting',
@@ -333,10 +333,6 @@ function choose(year) {
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);
-
-        console.log(clicked)
-
-
     });
 
     // Change the cursor to a pointer when the mouse is over the layer.
@@ -355,7 +351,6 @@ function choose(year) {
 
     local.then(function (data) {
 
-        console.log(data);
         let data_cur = data[year];
         let data_norm = [];
         let max = 0;
@@ -368,8 +363,6 @@ function choose(year) {
 
             data_norm.push({"STATE_ID": data_cur[key]['id'], "PERMIT_NUM": parseInt(data_cur[key]['permit'])});
         }
-
-        console.log(data_norm);
 
         map.on('load', function () {
             //--------------new section hunting ------------------------
@@ -489,11 +482,9 @@ function choose(year) {
         local = fetchAsync();
 
         local.then(function (data) {
-            console.log(data);
             let data_cur = data[year];
             let data_norm = [];
             let max = 0;
-            let max_location = [];
             let min = Number.MAX_VALUE;
             for (let key in data_cur) {
                 if (parseInt(data_cur[key]['permit']) > max)
@@ -506,8 +497,6 @@ function choose(year) {
                     "PERMIT_NUM": parseInt(data_cur[key]['permit'])
                 });
             }
-
-            console.log(data_norm);
 
             map.on('load', function () {
 
@@ -583,7 +572,6 @@ function choose(year) {
                     expression_heigh.push(row["STATE_ID"], height);
 
                 });
-                console.log(max, min);
 
                 expression.push("rgba(0,0,0,0)");
 
@@ -656,8 +644,6 @@ function choose(year) {
                         // map.setLayoutProperty('gunfire_points','visibility','visible');
                         // map.setLayoutProperty('other_points','visibility','visible');
                         // map.setLayoutProperty('hunting_bars','visibility','visible');
-
-                        console.log('xxxx')
 
                         map.setLayoutProperty('3dLayer', 'visibility', 'none');
                         ex.className = 'mapboxgl-ctrl-group';

@@ -12,28 +12,28 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
     <div id='map'>
 
     </div>
 
     <div id='state-legend' class='legend'>
-        <h4>Gun Sales</h4>
-        <div><span style='background-color: rgb(152, 151, 150)'></span>&lt100,000</div>
-        <!--<div><span style='background-color: rgb(35,5,6)'></span>100,000</div>-->
-        <div><span style='background-color: rgb(132, 131, 130)'></span>150,000</div>
-        <div><span style='background-color: rgb(112, 111, 110)'></span>200,000</div>
-        <div><span style='background-color: rgb(92, 91, 90)'></span>300,000</div>
-        <!--<div><span style='background-color: rgb(120,6,14)'></span>100,000</div>-->
-        <!--<div><span style='background-color: rgb(148,6,15)'></span>200,000</div>-->
-        <div><span style='background-color: rgb(72, 71, 70)'></span>600,000</div>
-        <div><span style='background-color: rgb(52, 51, 50)'></span>>100,000,000</div>
-        <br>
-        <h4>Scatter Points Type</h4>
-        <div><span style='background-color: #FF3D33'></span>Gunfire</div>
-        <div><span style='background-color: #F4C77A'></span>Others</div>
-        <div><span style='background-color: #ff3161'></span>Mass Shooting</div>
-
+        <div class='legend-section' id='leg-gun-sales'>
+            <p class='title'>Gun Sales</p>
+            <div><span style='background-color: rgb(133, 130, 130)'></span>&lt 100,000</div>
+            <div><span style='background-color: rgb(116, 113, 113)'></span>&gt 100,000</div>
+            <div><span style='background-color: rgb(97, 94, 94)'></span>&gt 150,000</div>
+            <div><span style='background-color: rgb(84, 79, 79)'></span>&gt 200,000</div>
+            <div><span style='background-color: rgb(58, 55, 55)'></span>&gt 300,000</div>
+            <div><span style='background-color: rgb(40, 38, 38)'></span>&gt 600,000</div>
+            <div><span style='background-color: rgb(21, 20, 20)'></span>&gt 100,000,000</div>
+        </div>
+        <div class='legend-section' id='leg-scatter-pts'>
+            <p class='title'>Scatter Points</p>
+            <div><span style='background-color: #FF3D33'></span>Gunfire</div>
+            <div><span style='background-color: #F4C77A'></span>Others</div>
+            <div><span style='background-color: #ff3161'></span>Mass Shooting</div>
+        </div>
     </div>
 
     <div class='filter'>
@@ -45,9 +45,15 @@
 
     </div>
     <div class="slidecontainer">
-        <h4 id="year">Timeline </h4>
-        <input type="range" min="2012" max="2016" value="50" class="slider" id="myRange">
-        <output id="demo"/>
+        <p id="year">Timeline </p>
+        <input type="range" min="2012" max="2016" value="50" class="slider">
+        <ul class="range-labels">
+            <li class="active">2012</li>
+            <li>2013</li>
+            <li>2014</li>
+            <li>2015</li>
+            <li>2016</li>
+        </ul>
     </div>
 
 
