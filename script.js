@@ -6,6 +6,15 @@ button.setAttribute("class", "mapboxgl-ctrl-group");
 button.innerHTML = "3D";
 mapdiv.appendChild(button);
 
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+    output.innerHTML = this.value;
+}
+
 // State location data
 const stateData = {
 	"Alaska": [-154.493062, 63.588753],
@@ -72,8 +81,22 @@ let huntStatus = false;
 
 
 // points controller
+var filter_button_3 = document.getElementById('bu_police');
+// mass shooting controller
+var flag_3 = 1;
 
 function police_controller() {
+    if (flag_3 == 0) {
+        filter_button_3.style.backgroundColor = "dodgerblue";
+        flag_3 = 1;
+    } else {
+        flag_3 = 0;
+        filter_button_3.style.backgroundColor = "white";
+    }
+    if (map.getLayoutProperty('gunfire_points', 'visibility') === 'visible') {
+        map.setLayoutProperty('gunfire_points', 'visibility', 'none');
+    } else
+        map.setLayoutProperty('gunfire_points', 'visibility', 'visible');
     if (map.getLayoutProperty('gunfire_points','visibility') === 'visible'){
         map.setLayoutProperty('gunfire_points','visibility','none');
         policeStatus = false;
@@ -93,8 +116,20 @@ function police_controller() {
         policeStatus = true;
     }
 }
+var filter_button_1 = document.getElementById('bu_mass');
 // mass shooting controller
+var flag = 1;
+
 function mass_shooting_controller() {
+    if (flag == 0) {
+        filter_button_1.style.backgroundColor = "dodgerblue";
+        flag = 1;
+    } else {
+        flag = 0;
+        filter_button_1.style.backgroundColor = "white";
+    }
+
+
     if (map.getLayoutProperty('mass_shooting','visibility') === 'visible'){
         map.setLayoutProperty('mass_shooting','visibility','none');
         massStatus = false;
@@ -107,8 +142,18 @@ function mass_shooting_controller() {
 
 // entry
 choose(2012);
+var filter_button_2 = document.getElementById('bu_gunsales');
+// mass shooting controller
+var flag_2 = 1;
 
 function gun_sale_controller() {
+    if (flag_2 == 0) {
+        filter_button_2.style.backgroundColor = "dodgerblue";
+        flag_2 = 1;
+    } else {
+        flag_2 = 0;
+        filter_button_2.style.backgroundColor = "white";
+    }
     if ((map.getLayoutProperty('stateLayer', 'visibility')) === 'visible') {
 
         // map.setLayoutProperty('3dLayer', 'visibility', 'none');
@@ -120,8 +165,19 @@ function gun_sale_controller() {
         map.setLayoutProperty('stateLayer', 'visibility', 'visible');
     }
 }
+var filter_button_4 = document.getElementById('bu_hunting');
+// mass shooting controller
+var flag_4 = 1;
 
 function hunting_controller() {
+    if (flag_4 == 0) {
+        filter_button_4.style.backgroundColor = "dodgerblue";
+        flag_4 = 1;
+    } else {
+        flag_4 = 0;
+        filter_button_4.style.backgroundColor = "white";
+    }
+
     if (map.getLayoutProperty('hunting_bars','visibility') === 'visible'){
         map.setLayoutProperty('hunting_bars','visibility','none');
         huntStatus = false;
@@ -134,25 +190,22 @@ function hunting_controller() {
 }
 
 
-function choose(year){
+function choose(year) {
     mapboxgl.accessToken = 'pk.eyJ1IjoicmF5bW9uZGx4IiwiYSI6ImNqc3RpZ3R6NjI0NDIzeXBkNDlucW81MXEifQ.VThJpKXtsJZEQhScbEiItw';
-     map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/raymondlx/cjukhgjzv1v8d1gqfjsrcqf5g',
         center: [-99.9, 41.5],
-        zoom:3
+        zoom: 3
     });
     let baseRadius = 2.5;
     map.addControl(new mapboxgl.NavigationControl());
     map.addControl(new mapboxgl.FullscreenControl());
 
 
-
-
-
     let url = 'https://api.myjson.com/bins/15yxeu';
 
-    async function fetchAsync () {
+    async function fetchAsync() {
         // await response of fetch call
         let response = await fetch(url);
         // only proceed once promise is resolved
@@ -161,7 +214,7 @@ function choose(year){
         return data;
     }
 
-    async function fetchMass(){
+    async function fetchMass() {
 
         let response = await fetch("https://api.myjson.com/bins/1aoe6w");
 
@@ -170,7 +223,7 @@ function choose(year){
         return data;
     }
 
-    async function fetchHunting(){
+    async function fetchHunting() {
 
         let response = await fetch("https://api.myjson.com/bins/1h7e2g");
 
@@ -181,13 +234,13 @@ function choose(year){
 
 // set legend range
 
-    function getColor(number){
+    function getColor(number) {
         return number > 1000000 ? 'rgb(21, 20, 20)' :
             number > 600000 ? 'rgb(40, 38, 38)' :
-                number > 300000  ? 'rgb(58, 55, 55)' :
-                    number > 200000   ? 'rgb(84, 79, 79)' :
-                        number > 150000   ? 'rgb(97, 94, 94)' :
-                            number > 100000   ? 'rgb(116, 113, 113)' :
+                number > 300000 ? 'rgb(58, 55, 55)' :
+                    number > 200000 ? 'rgb(84, 79, 79)' :
+                        number > 150000 ? 'rgb(97, 94, 94)' :
+                            number > 100000 ? 'rgb(116, 113, 113)' :
                                 'rgb(133, 130, 130)';
     }
 
@@ -195,35 +248,34 @@ function choose(year){
     let data = fetchMass();
 
     data.then(function (ele) {
-        console.log(ele)
         let cur = ele[year.toString()];
         let min_fa = Number.MAX_VALUE;
         let max_fa = Number.MIN_VALUE;
 
-        for (let s in cur){
-            if (cur.hasOwnProperty(s)){
+        for (let s in cur) {
+            if (cur.hasOwnProperty(s)) {
                 let cur_fa = parseInt(cur[s].Total_victims);
-                if (cur_fa < min_fa){
+                if (cur_fa < min_fa) {
                     min_fa = cur_fa;
                 }
-                if (cur_fa > max_fa){
+                if (cur_fa > max_fa) {
                     max_fa = cur_fa;
                 }
             }
         }
 
-        let dif_fa = max_fa-min_fa;
+        let dif_fa = max_fa - min_fa;
 
 
         // get min max per year
         let exp_mass_shooting = [
             "all",
-            ["==",'date',parseInt(year)]
+            ["==", 'date', parseInt(year)]
         ];
 
-        console.log(dif_fa,min_fa,max_fa)
+        console.log(dif_fa, min_fa, max_fa)
 
-        map.on('load',function () {
+        map.on('load', function () {
             map.addLayer({
                 id: 'mass_shooting',
                 type: 'circle',
@@ -233,12 +285,12 @@ function choose(year){
                 },
                 'source-layer': 'mass_shooting_data-2gox7n',
                 filter: exp_mass_shooting,
-                layout:{
-                    visibility: massStatus?'visible':'none'
+                layout: {
+                    visibility: massStatus ? 'visible' : 'none'
                 },
-                paint:{
+                paint: {
                     // scaled betweeen 4,14
-                    'circle-radius': ['+',['*',['/',['-',['get','total_victims'],min_fa],dif_fa],35],10] ,
+                    'circle-radius': ['+', ['*', ['/', ['-', ['get', 'total_victims'], min_fa], dif_fa], 35], 10],
                     // 'circle-radius':['get','fatalities'],
                     'circle-color': "#E64531",
                     'circle-opacity': 0.7
@@ -258,7 +310,7 @@ function choose(year){
                 clicked = feature;
         })
 
-        if(clicked === null)
+        if (clicked === null)
             return;
         let coordinates = clicked.geometry.coordinates.slice();
         let cases = clicked.properties.case;
@@ -310,32 +362,32 @@ function choose(year){
         let data_norm = [];
         let max = 0;
         let min = Number.MAX_VALUE;
-        for (let key in data_cur){
+        for (let key in data_cur) {
             if (parseInt(data_cur[key]['permit']) > max)
                 max = parseInt(data_cur[key]['permit']);
             if (parseInt(data_cur[key]['permit']) < min)
                 min = parseInt(data_cur[key]['permit']);
 
-            data_norm.push({"STATE_ID":data_cur[key]['id'],"PERMIT_NUM":parseInt(data_cur[key]['permit'])});
+            data_norm.push({"STATE_ID": data_cur[key]['id'], "PERMIT_NUM": parseInt(data_cur[key]['permit'])});
         }
 
         console.log(data_norm);
 
-        map.on('load', function() {
-            //--------------new section hunting ------------------------    
+        map.on('load', function () {
+            //--------------new section hunting ------------------------
             const huntingPromise = fetchHunting();
 
-            huntingPromise.then(function(huntingData) {
-                    
+            huntingPromise.then(function (huntingData) {
+
                 const maxHeight = 90;
                 const barWidth = 10;
 
                 const generateBar = (height) => {
-                    const channels = 4; 
+                    const channels = 4;
                     let data = new Uint8Array(barWidth * height * channels);
-                    
+
                     const r = 149, g = 204, b = 124, a = 200;
-        
+
                     for (let x = 0; x < barWidth; x++) {
                         for (let y = height - 1; y >= 0; y--) {
                             const offset = (y * barWidth + x) * channels;
@@ -347,7 +399,7 @@ function choose(year){
                     }
                     return data;
                 }
-                
+
                 features = []
                 data = huntingData[year.toString()];
 
@@ -369,7 +421,7 @@ function choose(year){
                     var loc = stateData[state];
                     const height = Math.ceil(getMinMaxVal(20, 90, val["huntingperperson"]));
                     const bar = generateBar(height);
-                    map.addImage(`bar_${state}`, { width: barWidth, height: height, data: bar });
+                    map.addImage(`bar_${state}`, {width: barWidth, height: height, data: bar});
                     features.push({
                         "type": "Feature",
                         "properties": {
@@ -385,7 +437,7 @@ function choose(year){
                         }
                     })
                 });
-                
+
 
                 map.addLayer({
                     "id": "hunting_bars",
@@ -400,7 +452,7 @@ function choose(year){
                     "layout": {
                         "icon-image": "{icon}",
                         "icon-allow-overlap": true,
-                        visibility: huntStatus?'visible':'none'
+                        visibility: huntStatus ? 'visible' : 'none'
                     }
                 });
 
@@ -408,227 +460,253 @@ function choose(year){
                     closeButton: false,
                     closeOnClick: false
                 });
-        
+
                 function showDetail(location, layer, fields) {
                     var features = map.queryRenderedFeatures(location.point, layer);
                     popup.remove();
                     // exclude no-need land
-                    if (features !==  null && features[0]["layer"]["id"] === 'hunting_bars') {
+                    if (features !== null && features[0]["layer"]["id"] === 'hunting_bars') {
 
                         var popupText = "";
-                        
-                        popupText = 
-                        `<strong>${fields[0]}</strong>${features[0].properties["state"]}<br><strong>${fields[1]}</strong>${features[0].properties["statePop"]}<br><strong>${fields[2]}</strong>${features[0].properties["huntingPop"]}<br><strong>${fields[3]}</strong>${features[0].properties["huntingProportion"]}<br>`;
-                
+
+                        popupText =
+                            `<strong>${fields[0]}</strong>${features[0].properties["state"]}<br><strong>${fields[1]}</strong>${features[0].properties["statePop"]}<br><strong>${fields[2]}</strong>${features[0].properties["huntingPop"]}<br><strong>${fields[3]}</strong>${features[0].properties["huntingProportion"]}<br>`;
+
                         popup.setLngLat(location.lngLat)
                             .setHTML(popupText)
                             .addTo(map);
                     }
                 }
-        
-                map.on('mousemove', function(e) {
-                    showDetail(e, 'stateLayer', ["State: ", "Population: ", 
-                                                "# Hunting Permit: ", "% Hunting Permit: "])
+
+                map.on('mousemove', function (e) {
+                    showDetail(e, 'stateLayer', ["State: ", "Population: ",
+                        "# Hunting Permit: ", "% Hunting Permit: "])
                 });
-        
-            });
-
-            let exp_other = [
-                "all",
-                ['==','year',parseInt(year)],
-                ['!=','cause_short','Gunfire']
-            ];
-
-            let exp_gunfire = [
-                "all",
-                ['==','year',parseInt(year)],
-                ['==','cause_short','Gunfire']
-            ];
-
-            map.addLayer({
-                id: 'gunfire_points',
-                type: 'circle',
-                source: {
-                    type: 'vector',
-                    url: 'mapbox://raymondlx.00zyxnxb'
-                },
-                'source-layer': 'clean_data_with_location-atsza0',
-                filter:exp_gunfire,
-                layout:{
-                    visibility: policeStatus?'visible':'none'
-                },
-                paint:{
-                    'circle-radius': baseRadius,
-
-                    'circle-color': "#FF3D33"
-                }
-            });
-
-            map.addLayer({
-                id: 'other_points',
-                type: 'circle',
-                source: {
-                    type: 'vector',
-                    url: 'mapbox://raymondlx.00zyxnxb'
-                },
-                'source-layer': 'clean_data_with_location-atsza0',
-                filter:exp_other,
-                layout:{
-                    visibility: policeStatus?'visible':'none'
-                },
-                paint:{
-                    'circle-radius': baseRadius,
-                    'circle-color': "#F4C77A"
-                }
-            });
-
-
-
-
-            map.addSource("states", {
-                type: "vector",
-                url: "mapbox://mapbox.us_census_states_2015"
-            });
-
-            var expression = ["match", ["get", "STATE_ID"]];
-            var expression_heigh = ["match", ["get", "STATE_ID"]];
-
-            data_norm.forEach(function(row) {
-                // var green = (row["PERMIT_NUM"] / (max/10)) * 255;
-                // var color = "rgba(" + green + ", " + 0 + ", " + 0 + ", 1)";
-
-                // new range color
-                // console.log(row["PERMIT_NUM"]);
-                let color = getColor(parseInt(row["PERMIT_NUM"]));
-                expression.push(row["STATE_ID"], color);
-
-                //calculate height
-                let height = Math.round(parseInt(row["PERMIT_NUM"]));
-                expression_heigh.push(row["STATE_ID"],height);
 
             });
-            console.log(max,min);
 
-            expression.push("rgba(0,0,0,0)");
+        });
+        //--------------
 
-            expression_heigh.push(0);
+        local = fetchAsync();
 
-            // add layer
-            map.addLayer({
-                "id": "stateLayer",
-                "type": "fill",
-                "source": "states",
-                "source-layer": "states",
-                "paint": {
-                    "fill-color": expression,
-                    'fill-outline-color': 'grey',
-                    'fill-opacity': 0.9
-                }
-            }, 'waterway-label');
+        local.then(function (data) {
+            console.log(data);
+            let data_cur = data[year];
+            let data_norm = [];
+            let max = 0;
+            let max_location = [];
+            let min = Number.MAX_VALUE;
+            for (let key in data_cur) {
+                if (parseInt(data_cur[key]['permit']) > max)
+                    max = parseInt(data_cur[key]['permit']);
+                if (parseInt(data_cur[key]['permit']) < min)
+                    min = parseInt(data_cur[key]['permit']);
 
-            map.addLayer({
-                "id": "3dLayer",
-                'type': 'fill-extrusion',
-                "source": "states",
-                "source-layer": "states",
-                'layout': {
-                    'visibility': 'none'
-                },
-                "paint": {
-                    "fill-extrusion-color": expression,
-                    'fill-extrusion-height':expression_heigh,
-                    'fill-extrusion-opacity': 0.9,
-                    'fill-extrusion-base': 0
-                }
-            },'waterway-label');
+                data_norm.push({
+                    "STATE_ID": data_cur[key]['id'],
+                    "PERMIT_NUM": parseInt(data_cur[key]['permit'])
+                });
+            }
 
-            var overView = {
-                center: [-95.52, 39.94],
-                zoom: 3.5,
-                bearing: 0,
-                pitch: 0,
-                speed: 0.5,
-                curve: 0.5
-            };
+            console.log(data_norm);
+
+            map.on('load', function () {
+
+                let exp_other = [
+                    "all",
+                    ['==', 'year', parseInt(year)],
+                    ['!=', 'cause_short', 'Gunfire']
+                ];
+
+                let exp_gunfire = [
+                    "all",
+                    ['==', 'year', parseInt(year)],
+                    ['==', 'cause_short', 'Gunfire']
+                ];
+
+                map.addLayer({
+                    id: 'gunfire_points',
+                    type: 'circle',
+                    source: {
+                        type: 'vector',
+                        url: 'mapbox://raymondlx.00zyxnxb'
+                    },
+                    'source-layer': 'clean_data_with_location-atsza0',
+                    filter: exp_gunfire,
+                    layout: {
+                        visibility: policeStatus ? 'visible' : 'none'
+                    },
+                    paint: {
+                        'circle-radius': baseRadius,
+
+                        'circle-color': "#FF3D33"
+                    }
+                });
+
+                map.addLayer({
+                    id: 'other_points',
+                    type: 'circle',
+                    source: {
+                        type: 'vector',
+                        url: 'mapbox://raymondlx.00zyxnxb'
+                    },
+                    'source-layer': 'clean_data_with_location-atsza0',
+                    filter: exp_other,
+                    layout: {
+                        visibility: policeStatus ? 'visible' : 'none'
+                    },
+                    paint: {
+                        'circle-radius': baseRadius,
+                        'circle-color': "#F4C77A"
+                    }
+                });
 
 
-            var highestView = {
-                center: [-80.6, 39.1],
-                zoom: 5,
-                bearing: -18.1,
-                pitch: 60,
-                speed: 0.2,
-                curve: 0.7
-            };
+                map.addSource("states", {
+                    type: "vector",
+                    url: "mapbox://mapbox.us_census_states_2015"
+                });
 
-            // build 3d view function
-            let ex = document.getElementById('extrude');
-            ex.addEventListener('click', function() {
-                // console.log("click")
-                if ((map.getLayoutProperty('stateLayer', 'visibility')) === 'visible') {
+                var expression = ["match", ["get", "STATE_ID"]];
+                var expression_heigh = ["match", ["get", "STATE_ID"]];
+
+                data_norm.forEach(function (row) {
+                    // var green = (row["PERMIT_NUM"] / (max/10)) * 255;
+                    // var color = "rgba(" + green + ", " + 0 + ", " + 0 + ", 1)";
+
+                    // new range color
+                    // console.log(row["PERMIT_NUM"]);
+                    let color = getColor(parseInt(row["PERMIT_NUM"]));
+                    expression.push(row["STATE_ID"], color);
+
+                    //calculate height
+                    let height = Math.round(parseInt(row["PERMIT_NUM"]));
+                    expression_heigh.push(row["STATE_ID"], height);
+
+                });
+                console.log(max, min);
+
+                expression.push("rgba(0,0,0,0)");
+
+                expression_heigh.push(0);
+
+                // add layer
+                map.addLayer({
+                    "id": "stateLayer",
+                    "type": "fill",
+                    "source": "states",
+                    "source-layer": "states",
+                    "paint": {
+                        "fill-color": expression,
+                        'fill-outline-color': 'grey',
+                        'fill-opacity': 0.9
+                    }
+                }, 'waterway-label');
+
+                map.addLayer({
+                    "id": "3dLayer",
+                    'type': 'fill-extrusion',
+                    "source": "states",
+                    "source-layer": "states",
+                    'layout': {
+                        'visibility': 'none'
+                    },
+                    "paint": {
+                        "fill-extrusion-color": expression,
+                        'fill-extrusion-height': expression_heigh,
+                        'fill-extrusion-opacity': 0.9,
+                        'fill-extrusion-base': 0
+                    }
+                }, 'waterway-label');
+
+                var overView = {
+                    center: [-95.52, 39.94],
+                    zoom: 3.5,
+                    bearing: 0,
+                    pitch: 0,
+                    speed: 0.5,
+                    curve: 0.5
+                };
+
+
+                var highestView = {
+                    center: [-80.6, 39.1],
+                    zoom: 5,
+                    bearing: -18.1,
+                    pitch: 60,
+                    speed: 0.2,
+                    curve: 0.7
+                };
+
+                // build 3d view function
+                let ex = document.getElementById('extrude');
+                ex.addEventListener('click', function () {
                     // console.log("click")
-                    map.setLayoutProperty('3dLayer', 'visibility', 'visible');
-                    ex.className = 'mapboxgl-ctrl-group active';
+                    if ((map.getLayoutProperty('stateLayer', 'visibility')) === 'visible') {
+                        // console.log("click")
+                        map.setLayoutProperty('3dLayer', 'visibility', 'visible');
+                        ex.className = 'mapboxgl-ctrl-group active';
                         map.flyTo(highestView);
                         map.setLayoutProperty('stateLayer', 'visibility', 'none');
                         // map.setLayoutProperty('gunfire_points','visibility','none');
                         // map.setLayoutProperty('other_points','visibility','none');
                         // map.setLayoutProperty('hunting_bars','visibility','none');
 
-                }
-                else {
-                    map.setLayoutProperty('stateLayer', 'visibility', 'visible');
-                    // map.setLayoutProperty('gunfire_points','visibility','visible');
-                    // map.setLayoutProperty('other_points','visibility','visible');
-                    // map.setLayoutProperty('hunting_bars','visibility','visible');
+                    } else {
+                        map.setLayoutProperty('stateLayer', 'visibility', 'visible');
+                        // map.setLayoutProperty('gunfire_points','visibility','visible');
+                        // map.setLayoutProperty('other_points','visibility','visible');
+                        // map.setLayoutProperty('hunting_bars','visibility','visible');
 
-                    console.log('xxxx')
+                        console.log('xxxx')
 
-                    map.setLayoutProperty('3dLayer', 'visibility', 'none');
-                    ex.className = 'mapboxgl-ctrl-group';
-                    map.flyTo(overView);
+                        map.setLayoutProperty('3dLayer', 'visibility', 'none');
+                        ex.className = 'mapboxgl-ctrl-group';
+                        map.flyTo(overView);
+                    }
+                });
+            });
+
+
+            // build popUp function
+            var popup = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: false
+            });
+
+            function showDetail(location, layer, fields) {
+                var features = map.queryRenderedFeatures(location.point, layer);
+
+                popup.remove();
+                // exclude no-need land
+                if (features !== null && features[0]["layer"]["id"] === 'stateLayer') {
+                    // console.log(features)
+                    var popupText = "";
+
+                    popupText += "<strong>" + fields[0] + ":</strong> " + features[0].properties["STATE_NAME"] + "<" + "br" + ">";
+                    let id = features[0].properties["STATE_ID"];
+                    for (let i = 0; i < data_norm.length; i++) {
+                        if (data_norm[i]["STATE_ID"] === id) {
+                            popupText += "<strong>" + "GUN_SALES" + ":</strong> " + data_norm[i]["PERMIT_NUM"] + "<" + "br" + ">";
+                            break;
+                        }
+                    }
+
+                    popup.setLngLat(location.lngLat)
+                        .setHTML(popupText)
+                        .addTo(map);
                 }
+            }
+
+            map.on('mousemove', function (e) {
+                showDetail(e, 'stateLayer', ["STATE_NAME", "PERMITS_NUM"])
+            });
+
+            map.on('click', function (e) {
+                showDetail(e, 'stateLayer', ["STATE_NAME", "PERMITS_NUM"])
             });
         });
-
-
-        // build popUp function
-        var popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
-        });
-
-        function showDetail(location, layer, fields) {
-            var features = map.queryRenderedFeatures(location.point, layer);
-
-            popup.remove();
-            // exclude no-need land
-            if (features !==  null && features[0]["layer"]["id"] === 'stateLayer') {
-                // console.log(features)
-                var popupText = "";
-
-                popupText += "<strong>" + fields[0] + ":</strong> " + features[0].properties["STATE_NAME"] + "<" + "br" + ">";
-                let id = features[0].properties["STATE_ID"];
-                for (let i=0;i<data_norm.length;i++){
-                    if (data_norm[i]["STATE_ID"] === id ){
-                        popupText += "<strong>" + "GUN_SALES" + ":</strong> " + data_norm[i]["PERMIT_NUM"] + "<" + "br" + ">";
-                        break;
-                    }
-                }
-
-                popup.setLngLat(location.lngLat)
-                    .setHTML(popupText)
-                    .addTo(map);
-            }
-        }
-
-        map.on('mousemove', function(e) {
-            showDetail(e, 'stateLayer', ["STATE_NAME", "PERMITS_NUM"])
-        });
-
-        map.on('click', function(e) {
-            showDetail(e, 'stateLayer', ["STATE_NAME", "PERMITS_NUM"])
-        });
-    });
+    })
 }
 
