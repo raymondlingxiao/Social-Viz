@@ -7,13 +7,18 @@
   z-index: -100;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Ubuntu';
+}
+
 .legend {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-  font-family: 'Ubuntu';
   font-weight: 300;
   bottom: 5%;
   width: 160px;
@@ -68,7 +73,6 @@
 }
 
 .filter {
-  font-family: "Times New Roman";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,12 +109,6 @@
 
 }
 
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -144,7 +142,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 120px;
+  height: 100px;
   width: 30%;
   left: 50%;
   bottom: 5%;
@@ -155,14 +153,6 @@ body {
   padding: 30px 5%;
   z-index: 1;
   border-radius: 15px;
-}
-
-.slidecontainer p {
-  margin: 0;
-  font-size: 30px;
-  font-family: "Ubuntu";
-  font-weight: 400;
-  padding: 0;
 }
 
 .range-labels {
@@ -187,6 +177,7 @@ body {
   text-align: center;
   color: #a0a0a0;
   font-size: 18px;
+  font-weight: 300;
   cursor: pointer;
   transition: font-size 0.2s;
 }
@@ -195,6 +186,6 @@ body {
 .range-labels .active {
   color: #656565;
   font-size: 25px;
-  font-weight: 300;
+  font-weight: 400;
   transition: font-size 0.2s;
 }
