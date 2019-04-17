@@ -8,12 +8,12 @@ mapdiv.appendChild(button);
 
 $('.slider').on('input', () => {
     const val = $('.slider')[0].value;
-    $('.range-labels li').removeClass('active');
-    $('.range-labels').find(`li:nth-child(${(val - 2012 + 1)})`).addClass('active');
+    $('.year-labels li').removeClass('active');
+    $('.year-labels').find(`li:nth-child(${(val - 2012 + 1)})`).addClass('active');
     choose(val);
 });
 
-$('.range-labels li').on('click', (e) => {
+$('.year-labels li').on('click', (e) => {
   const val = e.target.innerHTML;
   $('.slider').val(val).trigger('input');
 });
