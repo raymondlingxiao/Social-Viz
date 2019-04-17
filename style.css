@@ -113,8 +113,8 @@ body {
   -webkit-appearance: none;
   width: 100%;
   height: 5px;
-  margin: 30px 0;
-  background: #e6e6e6;
+  margin: 25px 0;
+  background: #d6dadc;
   outline: none;
 }
 
@@ -148,14 +148,21 @@ body {
   bottom: 5%;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 3px;
   box-shadow: 0px 0px 50px 10px #bababa;
-  padding: 30px 5%;
+  padding: 25px 5% 25px 5%;
   z-index: 1;
   border-radius: 15px;
 }
 
-.range-labels {
+.slidecontainer p {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 400;
+  color: #656565;
+  padding: 0;
+}
+
+.year-labels {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -163,27 +170,28 @@ body {
   align-items: center;
   width: 105%;
   left: 52.5%;
+  height: 25%;
   transform: translateX(-50%);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.range-labels li {
+.year-labels li {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #a0a0a0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 300;
   cursor: pointer;
   transition: font-size 0.2s;
 }
 
 
-.range-labels .active {
+.year-labels .active {
   color: #656565;
   font-size: 25px;
   font-weight: 400;
