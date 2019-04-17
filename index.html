@@ -38,12 +38,26 @@
 
     <div class='filter'>
         <h4 class="title">Filter</h4>
-        <button class="bu" id="bu_mass" onClick="mass_shooting_controller()">Mass Shooting</button>
-        <button class="bu" id="bu_gunsales" onClick="gun_sale_controller()">Gun Sales</button>
-        <button class="bu" id="bu_police" onClick="police_controller()">Police Officer</button>
-        <button class="bu" id="bu_hunting" onClick="hunting_controller()">Hunting</button>
+
+        <div class="allcheckbox">
+
+            <label for="bu_mass" class="gou">
+                <input class="bu" type="checkbox" id="bu_mass" class="ck1" onClick="mass_shooting_controller()" />Mass
+                Shooting</label>
+
+            <label for="bu_gunsales" class="gou">
+                <input class="bu" type="checkbox" id="bu_gunsales" onClick="gun_sale_controller()" /><span>Gun
+                    Sales</span></label>
+            <label for="bu_police" class="gou">
+                <input class="bu" type="checkbox" id="bu_police" onClick="police_controller()" /><span>Police
+                    Officer</span></label>
+            <label for="bu_hunting" class="gou">
+                <input class="bu" type="checkbox" id="bu_hunting"
+                    onClick="hunting_controller()" /><span>Hunting</span></label>
+        </div>
 
     </div>
+
     <div class="slidecontainer">
         <h4 id="year">Timeline </h4>
         <input type="range" min="2012" max="2016" value="50" class="slider" id="myRange">

@@ -45,13 +45,21 @@
   align-items: center;
 }
 
+
+
+
+
+
+
 .filter {
   font-family: "Times New Roman";
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   text-align: left;
+
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   bottom: 30px;
@@ -59,7 +67,7 @@
   font: 18px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   padding-bottom: 10px;
   z-index: 1;
-  width: 100px;
+  width: 120px;
   margin-left: 20px;
   margin-top: 20px;
 }
