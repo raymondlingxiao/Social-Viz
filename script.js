@@ -111,12 +111,12 @@ choose(2012);
 function gun_sale_controller() {
     if ((map.getLayoutProperty('stateLayer', 'visibility')) === 'visible') {
 
-        map.setLayoutProperty('3dLayer', 'visibility', 'none');
+        // map.setLayoutProperty('3dLayer', 'visibility', 'none');
         map.setLayoutProperty('stateLayer', 'visibility', 'none');
 
     }
     else {
-        map.setLayoutProperty('3dLayer', 'visibility', 'none');
+        // map.setLayoutProperty('3dLayer', 'visibility', 'none');
         map.setLayoutProperty('stateLayer', 'visibility', 'visible');
     }
 }
@@ -195,13 +195,14 @@ function choose(year){
     let data = fetchMass();
 
     data.then(function (ele) {
+        console.log(ele)
         let cur = ele[year.toString()];
         let min_fa = Number.MAX_VALUE;
         let max_fa = Number.MIN_VALUE;
 
         for (let s in cur){
             if (cur.hasOwnProperty(s)){
-                let cur_fa = parseInt(cur[s].Fatalities);
+                let cur_fa = parseInt(cur[s].Total_victims);
                 if (cur_fa < min_fa){
                     min_fa = cur_fa;
                 }
@@ -237,7 +238,7 @@ function choose(year){
                 },
                 paint:{
                     // scaled betweeen 4,14
-                    'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min_fa],dif_fa],35],10] ,
+                    'circle-radius': ['+',['*',['/',['-',['get','total_victims'],min_fa],dif_fa],35],10] ,
                     // 'circle-radius':['get','fatalities'],
                     'circle-color': "#E64531",
                     'circle-opacity': 0.7
@@ -259,15 +260,16 @@ function choose(year){
 
         if(clicked === null)
             return;
-
         let coordinates = clicked.geometry.coordinates.slice();
         let cases = clicked.properties.case;
         let death = clicked.properties.fatalities;
         let legality = clicked.properties.weapons_obtained_legally;
+        let total = clicked.properties.total_victims;
 
         let description = "";
         description += "<strong>Case:</strong> " + cases + "<" + "br" + ">";
         description += "<strong>Fatalities:</strong> " + death + "<" + "br" + ">";
+        description += "<strong>Total Victims:</strong> " + total + "<" + "br" + ">";
         description += "<strong>Weapon Legality:</strong> " + legality + "<" + "br" + ">";
 
         // Ensure that if the map is zoomed out such that multiple
@@ -571,18 +573,20 @@ function choose(year){
                     // console.log("click")
                     map.setLayoutProperty('3dLayer', 'visibility', 'visible');
                     ex.className = 'mapboxgl-ctrl-group active';
-                    setTimeout(function() {
                         map.flyTo(highestView);
                         map.setLayoutProperty('stateLayer', 'visibility', 'none');
-                        map.setLayoutProperty('gunfire_points','visibility','none');
-                        map.setLayoutProperty('other_points','visibility','none');
+                        // map.setLayoutProperty('gunfire_points','visibility','none');
+                        // map.setLayoutProperty('other_points','visibility','none');
+                        // map.setLayoutProperty('hunting_bars','visibility','none');
 
-                    }, 1000);
                 }
                 else {
                     map.setLayoutProperty('stateLayer', 'visibility', 'visible');
-                    map.setLayoutProperty('gunfire_points','visibility','visible');
-                    map.setLayoutProperty('other_points','visibility','visible');
+                    // map.setLayoutProperty('gunfire_points','visibility','visible');
+                    // map.setLayoutProperty('other_points','visibility','visible');
+                    // map.setLayoutProperty('hunting_bars','visibility','visible');
+
+                    console.log('xxxx')
 
                     map.setLayoutProperty('3dLayer', 'visibility', 'none');
                     ex.className = 'mapboxgl-ctrl-group';
