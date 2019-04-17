@@ -383,7 +383,7 @@ function choose(year) {
                     const channels = 4;
                     let data = new Uint8Array(barWidth * height * channels);
 
-                    const r = 149, g = 204, b = 124, a = 200;
+                    const r = 93, g = 189, b = 234, a = 200;
 
                     for (let x = 0; x < barWidth; x++) {
                         for (let y = height - 1; y >= 0; y--) {
