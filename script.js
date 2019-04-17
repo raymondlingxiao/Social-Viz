@@ -76,7 +76,7 @@ const stateData = {
 let map = null;
 //global var
 
-let policeStatus = false;
+let policeStatus = true;
 let massStatus = false;
 let huntStatus = false;
 
