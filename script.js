@@ -142,7 +142,7 @@ function choose(year){
         center: [-99.9, 41.5],
         zoom:3
     });
-    let baseRadius = 4;
+    let baseRadius = 2.5;
     map.addControl(new mapboxgl.NavigationControl());
     map.addControl(new mapboxgl.FullscreenControl());
 
@@ -237,9 +237,9 @@ function choose(year){
                 },
                 paint:{
                     // scaled betweeen 4,14
-                    'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min_fa],dif_fa],15],4] ,
+                    'circle-radius': ['+',['*',['/',['-',['get','fatalities'],min_fa],dif_fa],35],10] ,
                     // 'circle-radius':['get','fatalities'],
-                    'circle-color': "#ff3161",
+                    'circle-color': "#E64531",
                     'circle-opacity': 0.7
                 }
             });
