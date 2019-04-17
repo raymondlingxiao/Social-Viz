@@ -118,7 +118,7 @@ function choose(year){
     mapboxgl.accessToken = 'pk.eyJ1IjoicmF5bW9uZGx4IiwiYSI6ImNqc3RpZ3R6NjI0NDIzeXBkNDlucW81MXEifQ.VThJpKXtsJZEQhScbEiItw';
      map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
+        style: 'mapbox://styles/raymondlx/cjukhgjzv1v8d1gqfjsrcqf5g',
         center: [-99.9, 41.5],
         zoom:3
     });
@@ -276,127 +276,10 @@ function choose(year){
     //-----------------------------------------------------------------
 
 
-    //--------------new section hunting ------------------------    
-    const huntingPromise = fetchHunting();
-
-    huntingPromise.then(function(huntingData) {
-
-        map.on("load", function() {
-            
-            const maxHeight = 90;
-            const barWidth = 20;
-
-            const generateBar = (height) => {
-                const channels = 4; 
-                const maxBlue = 204, minBlue = 94, maxRed = 204, minRed = 89, maxGreen = 152, minGreen = 89;
-                let data = new Uint8Array(barWidth * height * channels);
-                
-                const r = minRed + (height / maxHeight) * (maxRed - minRed), 
-                        g = maxGreen - (height / maxHeight) * (maxGreen - minGreen), 
-                        b = maxBlue - (height / maxHeight) * (maxBlue - minBlue);
-    
-                for (let x = 0; x < barWidth; x++) {
-                    for (let y = height - 1; y >= 0; y--) {
-                        const offset = (y * barWidth + x) * channels;
-                        data[offset + 0] = r; // red
-                        data[offset + 1] = g; // green
-                        data[offset + 2] = b; // blue
-                        data[offset + 3] = 200; // alpha
-                    }
-                }
-                return data;
-            }
-            
-            features = []
-            data = huntingData[year.toString()];
-
-            let min = 1, max = -1;
-
-            const getMinMaxVal = (rangeMin, rangeMax, curVal) => {
-                return (rangeMax - rangeMin) / (max - min) * (curVal - max) + rangeMax;
-            };
-
-            $.each(data, (_, val) => {
-                let v = val["huntingperperson"];
-                if (v > max)
-                    max = v;
-                if (v < min)
-                    min = v;
-            });
-
-            $.each(data, (state, val) => {
-                var loc = stateData[state];
-                const height = Math.ceil(getMinMaxVal(20, 90, val["huntingperperson"]));
-                const bar = generateBar(height);
-                map.addImage(`bar_${state}`, { width: barWidth, height: height, data: bar });
-                features.push({
-                    "type": "Feature",
-                    "properties": {
-                        "icon": `bar_${state}`,
-                        "state": state,
-                        "statePop": val["pop"],
-                        "huntingPop": val["hunting"],
-                        "huntingProportion": `${(100 * val["huntingperperson"]).toFixed(2)}%`
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": loc
-                    }
-                })
-            });
-            
-
-            map.addLayer({
-                "id": "hunting_bars",
-                "type": "symbol",
-                "source": {
-                    "type": "geojson",
-                    "data": {
-                        "type": "FeatureCollection",
-                        "features": features
-                    }
-                },
-                "layout": {
-                    "icon-image": "{icon}",
-                    "icon-allow-overlap": true
-                }
-            });
-
-            var popup = new mapboxgl.Popup({
-                closeButton: false,
-                closeOnClick: false
-            });
-    
-            function showDetail(location, layer, fields) {
-                var features = map.queryRenderedFeatures(location.point, layer);
-                popup.remove();
-                // exclude no-need land
-                if (features !==  null && features[0]["layer"]["id"] === 'hunting_bars') {
-
-                    var popupText = "";
-                    
-                    popupText = 
-                    `<strong>${fields[0]}</strong>${features[0].properties["state"]}<br><strong>${fields[1]}</strong>${features[0].properties["statePop"]}<br><strong>${fields[2]}</strong>${features[0].properties["huntingPop"]}<br><strong>${fields[3]}</strong>${features[0].properties["huntingProportion"]}<br>`;
-            
-                    popup.setLngLat(location.lngLat)
-                        .setHTML(popupText)
-                        .addTo(map);
-                }
-            }
-    
-            map.on('mousemove', function(e) {
-                showDetail(e, 'stateLayer', ["State: ", "Population: ", 
-                                            "# Hunting Permit: ", "% Hunting Permit: "])
-            });
-    
-        });
-
-    });
-    //--------------
-
     local = fetchAsync();
 
     local.then(function (data) {
+
         console.log(data);
         let data_cur = data[year];
         let data_norm = [];
@@ -415,6 +298,118 @@ function choose(year){
         console.log(data_norm);
 
         map.on('load', function() {
+            //--------------new section hunting ------------------------    
+            const huntingPromise = fetchHunting();
+
+            huntingPromise.then(function(huntingData) {
+                    
+                const maxHeight = 90;
+                const barWidth = 20;
+
+                const generateBar = (height) => {
+                    const channels = 4; 
+                    const maxBlue = 204, minBlue = 94, maxRed = 204, minRed = 89, maxGreen = 152, minGreen = 89;
+                    let data = new Uint8Array(barWidth * height * channels);
+                    
+                    const r = minRed + (height / maxHeight) * (maxRed - minRed), 
+                            g = maxGreen - (height / maxHeight) * (maxGreen - minGreen), 
+                            b = maxBlue - (height / maxHeight) * (maxBlue - minBlue);
+        
+                    for (let x = 0; x < barWidth; x++) {
+                        for (let y = height - 1; y >= 0; y--) {
+                            const offset = (y * barWidth + x) * channels;
+                            data[offset + 0] = r; // red
+                            data[offset + 1] = g; // green
+                            data[offset + 2] = b; // blue
+                            data[offset + 3] = 200; // alpha
+                        }
+                    }
+                    return data;
+                }
+                
+                features = []
+                data = huntingData[year.toString()];
+
+                let min = 1, max = -1;
+
+                const getMinMaxVal = (rangeMin, rangeMax, curVal) => {
+                    return (rangeMax - rangeMin) / (max - min) * (curVal - max) + rangeMax;
+                };
+
+                $.each(data, (_, val) => {
+                    let v = val["huntingperperson"];
+                    if (v > max)
+                        max = v;
+                    if (v < min)
+                        min = v;
+                });
+
+                $.each(data, (state, val) => {
+                    var loc = stateData[state];
+                    const height = Math.ceil(getMinMaxVal(20, 90, val["huntingperperson"]));
+                    const bar = generateBar(height);
+                    map.addImage(`bar_${state}`, { width: barWidth, height: height, data: bar });
+                    features.push({
+                        "type": "Feature",
+                        "properties": {
+                            "icon": `bar_${state}`,
+                            "state": state,
+                            "statePop": val["pop"],
+                            "huntingPop": val["hunting"],
+                            "huntingProportion": `${(100 * val["huntingperperson"]).toFixed(2)}%`
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": loc
+                        }
+                    })
+                });
+                
+
+                map.addLayer({
+                    "id": "hunting_bars",
+                    "type": "symbol",
+                    "source": {
+                        "type": "geojson",
+                        "data": {
+                            "type": "FeatureCollection",
+                            "features": features
+                        }
+                    },
+                    "layout": {
+                        "icon-image": "{icon}",
+                        "icon-allow-overlap": true
+                    }
+                });
+
+                var popup = new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false
+                });
+        
+                function showDetail(location, layer, fields) {
+                    var features = map.queryRenderedFeatures(location.point, layer);
+                    popup.remove();
+                    // exclude no-need land
+                    if (features !==  null && features[0]["layer"]["id"] === 'hunting_bars') {
+
+                        var popupText = "";
+                        
+                        popupText = 
+                        `<strong>${fields[0]}</strong>${features[0].properties["state"]}<br><strong>${fields[1]}</strong>${features[0].properties["statePop"]}<br><strong>${fields[2]}</strong>${features[0].properties["huntingPop"]}<br><strong>${fields[3]}</strong>${features[0].properties["huntingProportion"]}<br>`;
+                
+                        popup.setLngLat(location.lngLat)
+                            .setHTML(popupText)
+                            .addTo(map);
+                    }
+                }
+        
+                map.on('mousemove', function(e) {
+                    showDetail(e, 'stateLayer', ["State: ", "Population: ", 
+                                                "# Hunting Permit: ", "% Hunting Permit: "])
+                });
+        
+            });
 
             let exp_other = [
                 "all",
