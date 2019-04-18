@@ -17,43 +17,49 @@
 
     </div>
 
-    <div id='state-legend' class='legend'>
-        <div class='legend-section' id='leg-gun-sales'>
-            <p class='title'>Gun Sales</p>
-            <div><span style='background-color: rgb(133, 130, 130)'></span>&lt 100,000</div>
-            <div><span style='background-color: rgb(116, 113, 113)'></span>&gt 100,000</div>
-            <div><span style='background-color: rgb(97, 94, 94)'></span>&gt 150,000</div>
-            <div><span style='background-color: rgb(84, 79, 79)'></span>&gt 200,000</div>
-            <div><span style='background-color: rgb(58, 55, 55)'></span>&gt 300,000</div>
-            <div><span style='background-color: rgb(40, 38, 38)'></span>&gt 600,000</div>
-            <div><span style='background-color: rgb(21, 20, 20)'></span>&gt 100,000,000</div>
+    <div class='floating-section legend'>
+        <div class='legend-section'>
+            <p>Gun Sales</p>
+            <div><span style='background-color: rgb(133, 130, 130)'></span>&lt 100K</div>
+            <div><span style='background-color: rgb(116, 113, 113)'></span>100K - 150K</div>
+            <div><span style='background-color: rgb(97, 94, 94)'></span>150K - 200K</div>
+            <div><span style='background-color: rgb(84, 79, 79)'></span>200K - 300K</div>
+            <div><span style='background-color: rgb(58, 55, 55)'></span>300K - 600K</div>
+            <div><span style='background-color: rgb(40, 38, 38)'></span>600K - 10M</div>
+            <div><span style='background-color: rgb(21, 20, 20)'></span>&gt 10M</div>
         </div>
-        <div class='legend-section' id='leg-scatter-pts'>
-            <p class='title'>Scatter Points</p>
+        <div class='legend-section'>
+            <p>Scatter Points</p>
             <div><span style='background-color: #FF3D33'></span>Gunfire</div>
             <div><span style='background-color: #F4C77A'></span>Others</div>
             <div><span style='background-color: #ff3161'></span>Mass Shooting</div>
         </div>
     </div>
 
-    <div class='filter'>
-        <h4 class="title">Filter</h4>
+    <div class='floating-section filter'>
+        <p>Filter</p>
 
-        <div class="allcheckbox">
-
+        <div>
             <label for="bu_mass" class="gou">
-                <input class="bu" type="checkbox" id="bu_mass" onClick="mass_shooting_controller()" /><span>Mass
-                    Shooting</span></label>
+                <input class="bu" type="checkbox" id="bu_mass" onClick="mass_shooting_controller()" />
+                <span>Mass Shooting</span>
+            </label>
 
             <label for="bu_gunsales" class="gou">
-                <input class="bu" type="checkbox" id="bu_gunsales" onClick="gun_sale_controller()" checked /><span>Gun
-                    Sales</span></label>
+                <input class="bu" type="checkbox" id="bu_gunsales" onClick="gun_sale_controller()" checked />
+                <span>Gun Sales</span>
+            </label>
+
             <label for="bu_police" class="gou">
-                <input class="bu" type="checkbox" id="bu_police" onClick="police_controller()" checked /><span>Police
-                    Officer</span></label>
+                <input class="bu" type="checkbox" id="bu_police" onClick="police_controller()" checked />
+                <span>Police Officer</span>
+            </label>
+
             <label for="bu_hunting" class="gou">
                 <input class="bu" type="checkbox" id="bu_hunting"
-                    onClick="hunting_controller()" /><span>Hunting</span></label>
+                    onClick="hunting_controller()" />
+                <span>Hunting</span>
+            </label>
         </div>
 
     </div>
