@@ -131,10 +131,14 @@ function mass_shooting_controller() {
 
 	if (map.getLayoutProperty("mass_shooting", "visibility") === "visible") {
 		map.setLayoutProperty("mass_shooting", "visibility", "none");
-		massStatus = false;
+        map.setLayoutProperty("mass_shooting_fatalities", "visibility", "none");
+
+        massStatus = false;
 	} else {
 		map.setLayoutProperty("mass_shooting", "visibility", "visible");
-		massStatus = true;
+        map.setLayoutProperty("mass_shooting_fatalities", "visibility", "visible");
+
+        massStatus = true;
 	}
 }
 
@@ -285,10 +289,40 @@ function choose(year) {
 						10
 					],
 					// 'circle-radius':['get','fatalities'],
-					"circle-color": "#E64531",
+					"circle-color": "#F7BEC0",
 					"circle-opacity": 0.7
 				}
+
+
 			});
+
+            map.addLayer({
+                id: "mass_shooting_fatalities",
+                type: "circle",
+                source: {
+                    type: "vector",
+                    url: "mapbox://raymondlx.5tgwg8tn"
+                },
+                "source-layer": "mass_shooting_data-2gox7n",
+                filter: exp_mass_shooting,
+                layout: {
+                    visibility: massStatus ? "visible" : "none"
+                },
+                paint: {
+                    // scaled betweeen 4,14
+                    "circle-radius": [
+                        "+",
+                        ["*", ["/", ["-", ["get", "fatalities"], min_fa], dif_fa], 35],
+                        10
+                    ],
+                    // 'circle-radius':['get','fatalities'],
+                    "circle-color": "#FF0000",
+                    "circle-opacity": 0.3
+                }
+
+
+            });
+
 		});
 	});
 
