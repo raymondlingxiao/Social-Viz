@@ -22,7 +22,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	font-weight: 300;
-	width: 120px;
+	width: 130px;
   position: fixed;
   bottom: 5%;
 	box-shadow: 0px 0px 50px 5px #8e8e8e9f;
@@ -73,7 +73,7 @@ body {
 }
 
 .filter .title {
-	font-size: 15px;
+	font-size: 17px;
 	font-weight: 400;
 	margin: 0 0 10px 0;
 	text-align: center;
@@ -88,9 +88,13 @@ body {
 	flex-wrap: nowrap;
 }
 
+.gou:hover {
+	cursor: pointer;
+}
+
 .gou p {
   margin: 0 0 0 5px;
-  font-size: 12px;
+  font-size: 13.5px;
 }
 
 .gou input {
@@ -98,8 +102,8 @@ body {
 }
 
 .gou span {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   display: block;
   background: url("assets/checkbox_unchecked.png");
   background-repeat: no-repeat;
@@ -107,8 +111,6 @@ body {
 }
 
 .gou input:checked + span {
-  width: 20px;
-  height: 20px;
   background: url("assets/checkbox_checked.png");
   background-repeat: no-repeat;
   background-size: cover;

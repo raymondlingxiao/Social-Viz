@@ -732,7 +732,7 @@ function choose(year) {
 						if (data_norm[i]["STATE_ID"] === id) {
 							popupText +=
 								"<strong>" +
-								"GUN_SALES" +
+								"Gun Sales" +
 								":</strong> " +
 								data_norm[i]["PERMIT_NUM"] +
 								"<" +
@@ -750,11 +750,11 @@ function choose(year) {
 			}
 
 			map.on("mousemove", function(e) {
-				showDetail(e, "stateLayer", ["STATE_NAME", "PERMITS_NUM"]);
+				showDetail(e, "stateLayer", ["State: ", "# Permits"]);
 			});
 
 			map.on("click", function(e) {
-				showDetail(e, "stateLayer", ["STATE_NAME", "PERMITS_NUM"]);
+				showDetail(e, "stateLayer", ["State: ", "# Permits"]);
 			});
 		});
 	});
