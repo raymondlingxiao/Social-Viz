@@ -662,7 +662,7 @@ function choose(year) {
 
 				var overView = {
 					center: [-95.52, 39.94],
-					zoom: 3.5,
+					zoom: 3,
 					bearing: 0,
 					pitch: 0,
 					speed: 0.5,
@@ -671,7 +671,7 @@ function choose(year) {
 
 				var highestView = {
 					center: [-80.6, 39.1],
-					zoom: 5,
+					zoom: 3.3,
 					bearing: -18.1,
 					pitch: 60,
 					speed: 0.2,
@@ -680,28 +680,28 @@ function choose(year) {
 
 				// build 3d view function
 				let ex = document.getElementById("extrude");
-				ex.addEventListener("click", function() {
+				ex.onclick = function() {
 					// console.log("click")
-					if (map.getLayoutProperty("stateLayer", "visibility") === "visible") {
+					if (map.getLayoutProperty("3dLayer", "visibility") === "visible") {
 						// console.log("click")
-						map.setLayoutProperty("3dLayer", "visibility", "visible");
+						map.setLayoutProperty("3dLayer", "visibility", "none");
 						ex.className = "mapboxgl-ctrl-group active";
-						map.flyTo(highestView);
-						map.setLayoutProperty("stateLayer", "visibility", "none");
+						map.flyTo(overView);
+						map.setLayoutProperty("stateLayer", "visibility", "visible");
 						// map.setLayoutProperty('gunfire_points','visibility','none');
 						// map.setLayoutProperty('other_points','visibility','none');
 						// map.setLayoutProperty('hunting_bars','visibility','none');
 					} else {
-						map.setLayoutProperty("stateLayer", "visibility", "visible");
+						map.setLayoutProperty("stateLayer", "visibility", "none");
 						// map.setLayoutProperty('gunfire_points','visibility','visible');
 						// map.setLayoutProperty('other_points','visibility','visible');
 						// map.setLayoutProperty('hunting_bars','visibility','visible');
 
-						map.setLayoutProperty("3dLayer", "visibility", "none");
+						map.setLayoutProperty("3dLayer", "visibility", "visible");
 						ex.className = "mapboxgl-ctrl-group";
-						map.flyTo(overView);
+						map.flyTo(highestView);
 					}
-				});
+				};
 			});
 
 			// build popUp function
